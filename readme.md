@@ -8,11 +8,11 @@
 
 <p align="center">
   <a href="https://github.com/jameshsu1125">
-    <img src="https://user-images.githubusercontent.com/70932507/188534539-a68734ac-9330-4fe0-bc49-5fa85116493e.png" alt="Logo" width=72 height=72>
+    <img src="public/McDonalds_France_Logo_2003.png" alt="Logo" width=72 height=72>
   </a>
-  <h3 align="center">Logo</h3>
+  <h3 align="center">McDonald</h3>
   <p align="center">
-    Short description   
+    麥當勞：星級心測活動網站 
   </p>
 </p>
 
@@ -55,43 +55,13 @@ $ npm run build
 - use React hook
 - use Less.js
 - use ESLint [airbnb](https://github.com/airbnb/javascript) rules
-- There is a unit related style will use [TailwindCSS](https://tailwindcss.com/docs/padding)(Spacing, Typography...)
+- use [TailwindCSS](https://tailwindcss.com/docs/padding) library.
 
 ## What's included
 
 - `public` folder will copy to `/dist`
-- `src` folder is reactJs entry point. default file is named as `index.js`
+- `src` folder is reactJs entry point. default file is named as `pages/index.js`
 - `template` folder is html template for each entry points.
-
-```text
-📦package
- ┣ 📂public
- ┣ 📂src
- ┃ ┣ 📂components
- ┃ ┣ 📂hooks
- ┃ ┣ 📂index
- ┃ ┣ 📂pages
- ┃ ┣ 📂setting
- ┃ ┗ 📜index.js
- ┣ 📂template
- ┃ ┣ 📜template.html
- ┃ ┗ 📜template.meta.js
- ┣ 📜.babelrc
- ┣ 📜.browserslistrc
- ┣ 📜.env.defaults
- ┣ 📜.eslintignore
- ┣ 📜.eslintrc.json
- ┣ 📜.gitattributes
- ┣ 📜.gitignore
- ┣ 📜.prettierignore
- ┣ 📜.prettierrc
- ┣ 📜LICENSE
- ┣ 📜package.json
- ┣ 📜postcss.config.js
- ┣ 📜readme.md
- ┣ 📜tailwind.config.js
- ┗ 📜webpack.config.js
-```
 
 ## Bugs and feature requests
 
