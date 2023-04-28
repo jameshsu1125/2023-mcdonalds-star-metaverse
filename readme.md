@@ -55,7 +55,7 @@ $ npm run build
 - use React hook
 - use Less.js
 - use ESLint [airbnb](https://github.com/airbnb/javascript) rules
-- use [TailwindCSS](https://tailwindcss.com/docs/padding) library.
+- use [TailwindCSS](https://tailwindcss.com/docs/padding)
 
 ## What's included
 
