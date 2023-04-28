@@ -13,7 +13,7 @@
 
 # event
 
-- `on`, `onStart`, `onComplete`, `onUpdate`, `onEach`
+- `on`, `onStart`, `onComplete`, `onUpdate`, `onEach`, `onend`
 - `add`, `remove`, `addListener`, `addEventListener`, `removeListener`, `removeEventListener`
 
 # adj.
@@ -37,4 +37,14 @@
 
 # size
 
-iphone 7 390 x 593
+iphone 7: `390 x 593`
+
+facebook share image: `1280x720`
+
+line share image: `1024x1024`
+
+## no scrolling page size
+
+iphone7+ `750x803`
+
+iphone10+ `750x1050`
