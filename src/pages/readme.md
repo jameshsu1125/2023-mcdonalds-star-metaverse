@@ -10,13 +10,31 @@
 
 ## Table of components
 
-- [Component A](#component-a)
+- [Components](#components)
+  - [Table of components](#table-of-components)
+  - [landing](#landing)
+    - [Usage](#usage)
 
-## Component A
+## landing
+
+`landing page`:
 
 ### Usage
 
-### Development
+```jsx
+import Context from '@/settings/config';
+import { ACTION, PAGE } from '@/settings/constant';
+
+export default function () {
+  const [, setContext] = useContext(Context);
+
+  return (
+    <button onClick={() => setContext({ type: ACTION.page, state: PAGE.landing })}>landing</button>
+  );
+}
+```
+
+<!-- ### Development
 
 #### Methods
 
@@ -34,4 +52,4 @@
 
 | Properties         | description | default |
 | :----------------- | :---------: | ------: |
-| **title**:_string_ |     xxx     |      '' |
+| **title**:_string_ |     xxx     |      '' | -->

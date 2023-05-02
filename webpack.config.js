@@ -73,7 +73,7 @@ module.exports = () => {
 		},
 		resolve: {
 			extensions: ['*', '.js', '.jsx'],
-			alias: { arc: path.resolve(__dirname, 'src/') },
+			alias: { '@': path.resolve(__dirname, 'src/') },
 		},
 		plugins: [
 			new Dotenv({

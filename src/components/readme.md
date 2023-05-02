@@ -15,10 +15,7 @@
     - [LoadingProcess](#loadingprocess)
       - [Usage](#usage)
       - [Props](#props)
-    - [Development](#development)
-      - [Methods](#methods)
-      - [Properties](#properties)
-      - [Props](#props-1)
+    - [container](#container)
 
 ### LoadingProcess
 
@@ -52,7 +49,17 @@ const Pages = () => {
 | **type**:_string_     |     loading icon style      | 'spokes' |
 | **body**:_component_  | description text under icon |       '' |
 
-### Development
+### container
+
+```jsx
+import Container from '@/components/container';
+
+export default function () {
+  return <Container>innerHtml</Container>;
+}
+```
+
+<!-- ### Development
 
 #### Methods
 
@@ -70,4 +77,4 @@ const Pages = () => {
 
 | Properties         | description | default |
 | :----------------- | :---------: | ------: |
-| **title**:_string_ |     xxx     |      '' |
+| **title**:_string_ |     xxx     |      '' | -->

@@ -1,7 +1,7 @@
 {
-	"name": "2023-mcdonalds-what-star-u-r",
+	"name": "2023-mcdonalds-what-kind-of-star-your-are",
 	"description": "麥當勞：星級心測活動網站",
-	"homepage": "https://github.com/jameshsu1125/2023-mcdonalds-what-star-u-r",
+	"homepage": "https://github.com/jameshsu1125/2023-mcdonalds-what-kind-of-star-your-are",
 	"main": "index.js",
 	"scripts": {
 		"start": "webpack serve --hot",
