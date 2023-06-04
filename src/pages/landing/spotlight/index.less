@@ -1,0 +1,68 @@
+@import url('../../../settings/config.less');
+
+.Spotlight {
+	position: absolute;
+	top: 62%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+
+	.penumbra {
+		position: relative;
+		margin-left: 0 - image-width(@img) * @scale * 0.5;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/button-border.png';
+
+		.spotlight-star {
+			position: absolute;
+			bottom: 54%;
+			padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+			width: 100%;
+			background-image: url(@img);
+			background-size: cover;
+
+			@img: './img/spotlight-star.png';
+		}
+
+		& > button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: 0 - image-height(@img) * @scale * 0.5 * 0.5;
+			margin-left: 0 - image-width(@img) * @scale * 0.5;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale * 0.5;
+			background-image: url(@img);
+			background-position-y: 0%;
+			background-size: 100%;
+			transform: translateY(-3px);
+
+			@img: './img/button.png';
+
+			@apply flex flex-row items-center justify-center text-2xl font-bold tracking-widest text-primary;
+
+			&:hover {
+				background-position-y: 100%;
+				color: #fff;
+				& > svg {
+					fill: #fff;
+				}
+			}
+
+			&:active {
+				transform: translateY(0px);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Spotlight {
+		top: 65%;
+	}
+}

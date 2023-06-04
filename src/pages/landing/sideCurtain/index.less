@@ -1,0 +1,50 @@
+@import url('../../../settings/config.less');
+
+.SideCurtain {
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	& > div:nth-child(1) {
+		left: 0;
+	}
+
+	& > div:nth-child(2) {
+		right: 0;
+		transform: scale(-1, 1);
+	}
+
+	& > div {
+		position: absolute;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.7;
+		@img: './img/sideCurtain-xl.png';
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.SideCurtain {
+		& > div:nth-child(1) {
+			left: -142px;
+		}
+
+		& > div:nth-child(2) {
+			right: -142px;
+		}
+
+		& > div {
+			position: absolute;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.9;
+			@img: './img/sideCurtain.png';
+		}
+	}
+}

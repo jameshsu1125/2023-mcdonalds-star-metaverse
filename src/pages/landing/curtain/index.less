@@ -1,0 +1,20 @@
+@import url('../../../settings/config.less');
+
+.Curtain {
+	position: absolute;
+	height: 80%;
+	background-image: url('./img/curtain-xl.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: repeat-x;
+
+	@apply h-4/6 w-full;
+}
+
+@media only screen and (max-width: @SM) {
+	.Curtain {
+		height: 70%;
+		background-image: url('./img/curtain.png');
+		background-size: 100% 100%;
+	}
+}

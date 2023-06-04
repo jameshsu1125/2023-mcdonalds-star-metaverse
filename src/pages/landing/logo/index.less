@@ -1,0 +1,43 @@
+@import url('../../../settings/config.less');
+
+.Logo {
+	position: absolute;
+	top: 5%;
+	width: 100%;
+	height: auto;
+
+	@apply flex flex-col items-center justify-center space-y-3;
+
+	& > div:nth-child(1) {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.3;
+		@img: './img/logo.png';
+	}
+
+	& > div:nth-child(2) {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/pattern.svg';
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Logo {
+		top: 14%;
+		& > div:nth-child(2) {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 1;
+			@img: './img/pattern.svg';
+		}
+	}
+}

@@ -1,0 +1,122 @@
+@import url('../../../settings/config.less');
+
+.Carpet {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 37%;
+
+	.master-0 {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: 439px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.8;
+		@img: './img/master-0.png';
+
+		& > div {
+			position: absolute;
+			top: -44%;
+			left: -2%;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.8;
+			@img: './img/flower-on-master-0.png';
+		}
+	}
+
+	.master-1 {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.8;
+		@img: './img/master-1.png';
+	}
+
+	.master-2 {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.8;
+		@img: './img/master-2.png';
+
+		& > div:nth-child(1) {
+			position: absolute;
+			top: -94%;
+			right: -6%;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.8;
+			@img: './img/flower-on-master-2.png';
+		}
+
+		& > div:nth-child(2) {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: url('./img/master-2.png');
+			background-size: 100%;
+		}
+	}
+
+	.carpet {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url('./img/carpet.png');
+		background-position: center bottom;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Carpet {
+		height: 32%;
+	}
+	.master-0,
+	.master-1,
+	.master-2 {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1600px) {
+	.Carpet {
+		.master-1 {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	.Carpet {
+		.master-2 {
+			right: inherit;
+			left: 50%;
+			margin-left: -660px;
+			// display: none;
+		}
+	}
+}

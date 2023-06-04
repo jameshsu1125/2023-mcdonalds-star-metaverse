@@ -1,0 +1,43 @@
+@import url('../../../settings/config.less');
+
+.ColoredBalls {
+	position: absolute;
+	left: 50%;
+	width: 0;
+
+	@scale: 0.6;
+
+	& > div:nth-child(1) {
+		left: -1700px * @scale;
+	}
+
+	& > div:nth-child(2) {
+		right: -1700px * @scale;
+	}
+
+	& > div {
+		position: absolute;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@img: './img/coloredBalls-xl.png';
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.ColoredBalls {
+		left: 0;
+		width: 100%;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-position: center top;
+
+		@scale: 0.9;
+		@img: './img/coloredBalls.png';
+		& > div {
+			display: none;
+		}
+	}
+}

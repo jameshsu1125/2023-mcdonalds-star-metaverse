@@ -5,18 +5,18 @@ const { fontSize } = require('tailwindcss/defaultTheme');
 module.exports = {
 	content: ['./src/**/*.{html,js}'],
 	theme: {
-		container: { screen: {} },
+		// container: { screen: {} },
 		fontSize: {
 			...fontSize,
 		},
 		colors: {
 			...color,
-			primary: '#870000',
-			secondary: '#ff6600',
+			primary: '#d9447e',
+			secondary: '#ffbc0d',
 			tertiary: '#ff0066',
 			quaternary: '#00ff00',
-			backgroundColor: '#111',
-			textColor: '#eee',
+			background: '#030e3b',
+			color: '#fff',
 		},
 	},
 	plugins: [],

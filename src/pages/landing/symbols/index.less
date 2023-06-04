@@ -1,0 +1,96 @@
+@import url('../../../settings/config.less');
+
+.Symbols {
+	position: absolute;
+	width: 0;
+	height: 0;
+
+	& > div {
+		position: absolute;
+	}
+
+	& > div:nth-child(1) {
+		top: -470px;
+		left: -480px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.8;
+		@img: './img/symbols-star-0.png';
+	}
+
+	& > div:nth-child(2) {
+		top: -320px;
+		left: 340px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.8;
+		@img: './img/symbols-star-1.png';
+	}
+
+	& > div:nth-child(3) {
+		top: -134px;
+		left: -342px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.7;
+		@img: './img/symbols-star-2.png';
+	}
+}
+
+@media only screen and (max-width: @MD) {
+	.Symbols {
+		& > div:nth-child(1) {
+			left: -350px;
+		}
+
+		& > div:nth-child(2) {
+			left: 230px;
+		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Symbols {
+		& > div:nth-child(1) {
+			top: -550px;
+			left: -325px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.6;
+			@img: './img/symbols-star-0.png';
+		}
+
+		& > div:nth-child(2) {
+			top: -230px;
+			left: 290px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.6;
+			@img: './img/symbols-star-1.png';
+		}
+
+		& > div:nth-child(3) {
+			top: -113px;
+			left: -362px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.6;
+			@img: './img/symbols-star-2.png';
+		}
+	}
+}

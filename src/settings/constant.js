@@ -5,22 +5,23 @@ export const ACTION = {
 
 export const PAGE = {
 	landing: '/landing',
+	question: '/question',
 };
 
-export const LOADING_PROCESS_TYPE = [
-	'balls',
-	'bars',
-	'bubbles',
-	'cubes',
-	'cylon',
-	'spin',
-	'spinningBubbles',
-	'spokes',
-];
+export const LOADING_PROCESS_TYPE = {
+	balls: 'balls',
+	bars: 'bars',
+	bubbles: 'bubbles',
+	cubes: 'cubes',
+	cylon: 'cylon',
+	spin: 'spin',
+	spinningBubbles: 'spinningBubbles',
+	spokes: 'spokes',
+};
 
 export const LOADING_PROCESS_STATE = {
 	enabled: false,
-	type: LOADING_PROCESS_TYPE[LOADING_PROCESS_TYPE.length - 1] || 'spokes',
+	type: LOADING_PROCESS_TYPE.bubbles,
 	body: '',
 };
 

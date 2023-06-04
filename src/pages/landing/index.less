@@ -1,0 +1,13 @@
+@import url('../../settings/config.less');
+.Landing {
+	overflow: hidden;
+	min-width: 768px;
+	min-height: 825px;
+	@apply absolute top-0 h-full w-full;
+}
+
+@media only screen and (max-width: @SM) {
+	.Landing {
+		min-height: 1050px;
+	}
+}
