@@ -1,23 +1,20 @@
 import OnloadProvider from 'lesca-react-onload';
-import { memo, useContext, useState } from 'react';
-import { Context } from '../../settings/config';
-import 標語 from './slogan';
+import { memo, useState } from 'react';
 import 地毯 from './carpet';
 import 彩球 from './coloredBalls';
-import { LandingContext, LandingSteps } from './config';
+import { LandingContext, LandingState, LandingSteps } from './config';
 import 窗簾 from './curtain';
 import 食物們 from './foods';
 import './index.less';
 import 麥當當LOGO from './logo';
 import 門簾 from './sideCurtain';
+import 標語 from './slogan';
 import 聚光燈 from './spotlight';
 import 星星們 from './symbols';
 
 const Landing = memo(() => {
-	const value = useState(LandingSteps);
-	const [content, setContext] = useContext(Context);
-
-	console.log(content);
+	const value = useState(LandingState);
+	const [, setContext] = value;
 
 	return (
 		<LandingContext.Provider value={value}>

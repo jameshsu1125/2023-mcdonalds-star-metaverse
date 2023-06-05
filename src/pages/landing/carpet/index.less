@@ -19,6 +19,22 @@
 		@scale: 0.8;
 		@img: './img/master-0.png';
 
+		@keyframes wabble2 {
+			0% {
+				transform: rotate(0deg);
+			}
+			50% {
+				transform: rotate(30deg);
+			}
+			100% {
+				transform: rotate(0deg);
+			}
+		}
+
+		.wabble {
+			animation: wabble2 6s ease-in-out infinite;
+		}
+
 		& > div {
 			position: absolute;
 			top: -44%;
@@ -27,6 +43,7 @@
 			height: image-height(@img) * @scale;
 			background-image: url(@img);
 			background-size: 100%;
+			transform-origin: 61% 96.2%;
 
 			@scale: 0.8;
 			@img: './img/flower-on-master-0.png';
@@ -58,6 +75,22 @@
 		@scale: 0.8;
 		@img: './img/master-2.png';
 
+		@keyframes wabble {
+			0% {
+				transform: rotate(-10deg);
+			}
+			50% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(-10deg);
+			}
+		}
+
+		.wabble {
+			animation: wabble 5s ease-in-out infinite;
+		}
+
 		& > div:nth-child(1) {
 			position: absolute;
 			top: -94%;
@@ -66,6 +99,7 @@
 			height: image-height(@img) * @scale;
 			background-image: url(@img);
 			background-size: 100%;
+			transform-origin: 35.7% 95.6%;
 
 			@scale: 0.8;
 			@img: './img/flower-on-master-2.png';
@@ -88,6 +122,7 @@
 		background-position: center bottom;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
+		transform-origin: center bottom;
 	}
 }
 

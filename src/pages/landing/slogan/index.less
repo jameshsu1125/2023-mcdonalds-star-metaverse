@@ -5,6 +5,12 @@
 	top: 50%;
 	left: 50%;
 
+	.breath {
+		&::after {
+			animation: halo 0.6s ease-in-out infinite;
+		}
+	}
+
 	.sub {
 		position: absolute;
 		margin-top: -71px;
@@ -52,6 +58,7 @@
 			background-image: url(@img);
 			background-size: 100%;
 			content: '';
+			opacity: 1;
 
 			@scale: 0.66;
 			@img: './img/shadow.png';

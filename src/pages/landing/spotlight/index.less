@@ -7,6 +7,19 @@
 	width: 0px;
 	height: 0px;
 
+	.penumbraShadow {
+		position: absolute;
+		top: -1px;
+		margin-left: 0 - image-width(@img) * @scale * 0.5;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/button-border.png';
+	}
+
 	.penumbra {
 		position: relative;
 		margin-left: 0 - image-width(@img) * @scale * 0.5;
@@ -14,6 +27,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		opacity: 0;
 
 		@scale: 0.9;
 		@img: './img/button-border.png';
@@ -40,6 +54,7 @@
 			background-image: url(@img);
 			background-position-y: 0%;
 			background-size: 100%;
+			opacity: 0;
 			transform: translateY(-3px);
 
 			@img: './img/button.png';

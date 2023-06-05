@@ -1,13 +1,30 @@
+import useTween from 'lesca-use-tween';
 import { memo, useContext, useEffect } from 'react';
 import { Context } from '../../../settings/config';
 import { ACTION, PAGE } from '../../../settings/constant';
+import { LandingSteps } from '../config';
 
-const LandingButton = memo(() => {
+const LandingButton = memo(({ steps, setLandingState }) => {
+	const [style, setStyle] = useTween({ opacity: 0, scale: 0.8, y: -100 });
 	const [, setContext] = useContext(Context);
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		if (steps === LandingSteps.fadeIned) {
+			setStyle(
+				{ opacity: 1, scale: 1, y: 0 },
+				{
+					delay: 1200,
+					duration: 500,
+					onComplete: () => {
+						setLandingState((S) => ({ ...S, steps: LandingSteps.buttonFadeIned }));
+					},
+				},
+			);
+		}
+	}, [steps]);
 	return (
 		<button
+			style={style}
 			type='button'
 			onClick={() => {
 				setContext({ type: ACTION.page, state: PAGE.question });
