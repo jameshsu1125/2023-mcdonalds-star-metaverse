@@ -6,17 +6,18 @@ let s = setInterval(() => {
 }, 30);
 
 let index = 0;
-let r = 15;
+const r = 15;
+let out = '';
 const render = () => {
 	const x = Math.cos((Math.PI / 180) * index) * r;
 	const y = Math.sin((Math.PI / 180) * index * 2) * r;
 
-	console.log(
-		`${Math.round((index / 360) * 100)}%{transform: translateX(${
-			x.toFixed(2) - r
-		}px) translateY(${y.toFixed(2)}px)}`,
-	);
+	out += `${Math.round((index / 360) * 100)}%{transform: translateX(${
+		x.toFixed(2) - r
+	}px) translateY(${y.toFixed(2)}px)}\n`;
+
 	index += 5;
 	if (index <= 360) requestAnimationFrame(render);
+	else console.log(out);
 };
 render();

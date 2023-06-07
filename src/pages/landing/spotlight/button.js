@@ -1,10 +1,13 @@
+import Click from 'lesca-click';
 import useTween from 'lesca-use-tween';
-import { memo, useContext, useEffect } from 'react';
+import { memo, useContext, useEffect, useId, useRef } from 'react';
 import { Context } from '../../../settings/config';
 import { ACTION, PAGE } from '../../../settings/constant';
 import { LandingSteps } from '../config';
 
 const LandingButton = memo(({ steps, setLandingState }) => {
+	const ref = useRef();
+	const id = useId();
 	const [style, setStyle] = useTween({ opacity: 0, scale: 0.8, y: -100 });
 	const [, setContext] = useContext(Context);
 
@@ -17,19 +20,17 @@ const LandingButton = memo(({ steps, setLandingState }) => {
 					duration: 500,
 					onComplete: () => {
 						setLandingState((S) => ({ ...S, steps: LandingSteps.buttonFadeIned }));
+						Click.add(`#${id}`, () => {
+							setContext({ type: ACTION.page, state: PAGE.question });
+						});
+						ref.current.classList.add('cursor-pointer');
 					},
 				},
 			);
 		}
 	}, [steps]);
 	return (
-		<button
-			style={style}
-			type='button'
-			onClick={() => {
-				setContext({ type: ACTION.page, state: PAGE.question });
-			}}
-		>
+		<div ref={ref} style={style} className='button' id={id}>
 			<svg
 				fill='#D9447E'
 				x='0px'
@@ -53,7 +54,7 @@ const LandingButton = memo(({ steps, setLandingState }) => {
 			>
 				<polygon points='4.7,23.3 12.2,17.8 14.8,19.7 19.8,23.3 17.5,16.4 16.9,14.4 24.5,8.9 15.1,8.9 15.1,8.9 12.2,0 9.4,8.9 9.4,8.9 0,8.9 7.6,14.4' />
 			</svg>
-		</button>
+		</div>
 	);
 });
 export default LandingButton;

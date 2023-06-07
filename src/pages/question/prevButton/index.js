@@ -15,9 +15,9 @@ const PrevButton = memo(() => {
 		} else if (ref.current?.style.opacity !== '1') setStyle({ opacity: 1 });
 	}, [index]);
 	return (
-		<button ref={ref} style={style} type='button' className='QuestionPrevButton'>
+		<div ref={ref} style={style} className='QuestionPrevButton cursor-pointer'>
 			回上一題
-		</button>
+		</div>
 	);
 });
 export default PrevButton;

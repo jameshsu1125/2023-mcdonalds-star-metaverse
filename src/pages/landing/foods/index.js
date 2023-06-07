@@ -1,86 +1,177 @@
 import useTween from 'lesca-use-tween';
-import { memo, useContext, useEffect } from 'react';
+import { memo, useContext, useEffect, useRef } from 'react';
 import { LandingContext, LandingSteps } from '../config';
 import './index.less';
 
+const OFFSET_DELAY = 1000;
+const random = () => Math.random() * OFFSET_DELAY;
+
 const Coke1 = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: random(),
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='coke-0' />;
+	return <div ref={ref} style={style} className='coke-1' />;
 };
 
 const Coffee = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: random(),
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='coffee' />;
+	return <div ref={ref} style={style} className='coffee' />;
 };
 
 const Fried = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: random(),
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='fried' />;
+	return <div ref={ref} style={style} className='fried' />;
 };
 
 const McFlurry = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: random(),
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='McFlurry' />;
+	return <div ref={ref} style={style} className='McFlurry' />;
 };
 
 const ChickenNuggets = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: random(),
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='chickenNuggets' />;
+	return <div ref={ref} style={style} className='chickenNuggets' />;
 };
 
 const FriedChicken = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: Math.random() * 2000,
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='friedChicken' />;
+	return <div ref={ref} style={style} className='friedChicken' />;
 };
 
 const Hamburger = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: Math.random() * 2000,
+					onComplete: () => {
+						ref.current?.classList.add('swing-7');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='hamburger' />;
+	return <div ref={ref} style={style} className='hamburger' />;
 };
 
 const Coke0 = ({ steps }) => {
-	const [style, setStyle] = useTween({ opacity: 0 });
+	const ref = useRef();
+	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIn) {
-			// setStyle({ y: 0 });
+		if (steps === LandingSteps.buttonFadeIned) {
+			setStyle(
+				{ y: 0 },
+				{
+					duration: 1000,
+					delay: Math.random() * 2000,
+					onComplete: () => {
+						ref.current?.classList.add('swing-5');
+						if (Math.random > 0.5) ref.current?.classList.add('reverse');
+					},
+				},
+			);
 		}
 	}, [steps]);
-	return <div style={style} className='coke-0' />;
+	return <div ref={ref} style={style} className='coke-0' />;
 };
 
 const 食物們 = memo(() => {

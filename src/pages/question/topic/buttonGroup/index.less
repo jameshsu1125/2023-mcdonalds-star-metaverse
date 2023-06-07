@@ -1,24 +1,31 @@
 .ButtonGroup {
 	width: 100%;
+
 	@apply flex flex-col items-center justify-center space-y-6;
 
-	& > button {
+	& > div {
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale * 0.5;
 		background-image: url(@img);
 		background-position-y: 0%;
 		background-size: 100%;
 		color: #000;
+		cursor: pointer;
 
+		user-select: none;
 		@scale: 0.58;
 		@img: './img/btn.png';
 
-		@apply text-2xl;
+		@apply flex items-center justify-center text-2xl;
 
 		&:hover {
 			background-position-y: 100%;
 
-			@apply text-white;
+			@apply text-secondary;
+		}
+
+		&:active {
+			transform: scale(0.95);
 		}
 	}
 }

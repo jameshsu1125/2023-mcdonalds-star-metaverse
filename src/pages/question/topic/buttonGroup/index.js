@@ -4,11 +4,7 @@ import { QuestionContext, QuestionList } from '../../config';
 
 const Button = ({ label, type }) => {
 	console.log(type);
-	return (
-		<button className='button' type='button'>
-			{label}
-		</button>
-	);
+	return <div className='button'>{label}</div>;
 };
 
 const ButtonGroup = memo(() => {

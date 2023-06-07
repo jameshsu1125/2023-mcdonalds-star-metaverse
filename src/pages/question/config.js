@@ -88,6 +88,6 @@ export const QuestionAnswers = [
 	{ S: 0, N: 0 },
 	{ T: 0, F: 0 },
 ];
-export const QuestionSteps = { unset: 0, question: 1, ugc: 2 };
+export const QuestionSteps = { unset: 0, fadeIn: 1, question: 1, ugc: 2 };
 export const QuestionState = { steps: QuestionSteps.unset, index: 0, answers: QuestionAnswers };
 export const QuestionContext = createContext(QuestionState);
