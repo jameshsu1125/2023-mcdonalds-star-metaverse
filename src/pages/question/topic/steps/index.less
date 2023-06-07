@@ -1,0 +1,31 @@
+.Steps {
+	width: 100%;
+
+	@scale: 0.44;
+	@apply flex items-center justify-center;
+
+	& > div {
+		transition: 1s;
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.ten {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale * 0.5;
+		background-image: url(@img);
+		background-position-y: 0%;
+		background-size: 100%;
+
+		@img: './img/tensDigit.png';
+	}
+
+	.single {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale * 0.1;
+		background-image: url(@img);
+		background-position-y: (100%/9) * 0;
+		background-size: 100%;
+
+		@img: './img/singleDigit.png';
+	}
+}

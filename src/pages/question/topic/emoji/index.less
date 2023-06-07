@@ -1,0 +1,50 @@
+.Emoji {
+	width: 100%;
+	@apply mb-5 flex justify-center;
+
+	& > div {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-size: 100%;
+		filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+
+		@scale: 0.32;
+		@img: './img/q1.png';
+	}
+
+	& > .q0 {
+		background-image: url('./img/q1.png');
+	}
+
+	& > .q1 {
+		background-image: url('./img/q2.png');
+	}
+
+	& > .q2 {
+		background-image: url('./img/q3.png');
+	}
+
+	& > .q3 {
+		background-image: url('./img/q4.png');
+	}
+
+	& > .q4 {
+		background-image: url('./img/q5.png');
+	}
+
+	& > .q5 {
+		background-image: url('./img/q6.png');
+	}
+
+	& > .q6 {
+		background-image: url('./img/q7.png');
+	}
+
+	& > .q7 {
+		background-image: url('./img/q8.png');
+	}
+
+	& > .q8 {
+		background-image: url('./img/q9.png');
+	}
+}

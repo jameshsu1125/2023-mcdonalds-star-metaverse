@@ -1,0 +1,38 @@
+.Slider {
+	position: relative;
+	width: 100%;
+	height: 60px;
+
+	@apply flex items-center justify-center;
+
+	.process {
+		position: relative;
+		width: 47%;
+		height: 13px;
+		@apply rounded-l-full rounded-r-full border-2 border-black bg-quaternary;
+
+		& > div {
+			position: relative;
+			margin-left: -10%;
+			width: 105%;
+			height: 100%;
+
+			& > div {
+				position: absolute;
+				top: 50%;
+				left: 0%;
+				margin-top: 0 - image-height(@img) * @scale * 0.5;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				border: solid 2px #000;
+				background-image: url(@img);
+				background-size: 100%;
+
+				@scale: 0.5;
+				@img: './img/smile.jpg';
+
+				@apply rounded-full;
+			}
+		}
+	}
+}

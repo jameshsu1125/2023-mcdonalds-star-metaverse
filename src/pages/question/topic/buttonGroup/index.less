@@ -1,0 +1,24 @@
+.ButtonGroup {
+	width: 100%;
+	@apply flex flex-col items-center justify-center space-y-6;
+
+	& > button {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale * 0.5;
+		background-image: url(@img);
+		background-position-y: 0%;
+		background-size: 100%;
+		color: #000;
+
+		@scale: 0.58;
+		@img: './img/btn.png';
+
+		@apply text-2xl;
+
+		&:hover {
+			background-position-y: 100%;
+
+			@apply text-white;
+		}
+	}
+}

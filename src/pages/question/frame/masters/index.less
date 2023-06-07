@@ -1,0 +1,245 @@
+@import url('../../../../settings/config.less');
+
+.Masters {
+	position: absolute;
+	bottom: -100px;
+	width: image-width(@img) * @scale;
+	height: image-height(@img) * @scale;
+	pointer-events: none;
+	// background-image: url(@img);
+
+	@scale: 1;
+	@img: './img/masters.png';
+
+	& > div {
+		position: absolute;
+		background-image: 100%;
+		background-size: 100%;
+	}
+
+	& > div:nth-child(1) {
+		top: 0px;
+		left: 0px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-0.png';
+	}
+
+	& > div:nth-child(2) {
+		top: 41.7%;
+		left: 64.3%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-1.png';
+	}
+
+	& > div:nth-child(3) {
+		top: 51.2%;
+		left: 2.3%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-2.png';
+	}
+
+	& > div:nth-child(4) {
+		top: 0%;
+		left: 72.5%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-3.png';
+	}
+
+	& > div:nth-child(5) {
+		top: 46.3%;
+		left: 68.6%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-4.png';
+	}
+
+	& > div:nth-child(6) {
+		top: 17%;
+		left: 77.7%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-5.png';
+	}
+
+	& > div:nth-child(7) {
+		top: 35.7%;
+		left: 53.3%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-6.png';
+	}
+
+	& > div:nth-child(8) {
+		top: 41.6%;
+		left: 46.4%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-7.png';
+	}
+
+	& > div:nth-child(9) {
+		top: 41.5%;
+		left: 26.8%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-8.png';
+	}
+
+	& > div:nth-child(10) {
+		top: 37.5%;
+		left: 41.3%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-9.png';
+	}
+
+	& > div:nth-child(11) {
+		top: 39%;
+		left: 29.9%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-10.png';
+	}
+
+	& > div:nth-child(12) {
+		top: 33.6%;
+		left: 13.3%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/master-11.png';
+	}
+
+	.buttonContainer {
+		position: absolute;
+		top: 188px;
+		left: 764px;
+		width: 143px;
+		height: 77px;
+		// background-color: rgba(255, 0, 0, 0.5);
+		@apply flex items-center justify-center;
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Masters {
+		position: absolute;
+		bottom: -113px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		// background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.7;
+		@img: './img/masters-sm.png';
+
+		& > div {
+			display: none;
+		}
+
+		& > div:nth-child(1) {
+			top: 32px;
+			left: 16px;
+			display: block;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.73;
+			@img: './img/master-0.png';
+		}
+
+		& > div:nth-child(4) {
+			top: 8%;
+			left: 55%;
+			display: block;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.73;
+			@img: './img/master-3.png';
+		}
+
+		& > div:nth-child(6) {
+			top: 21%;
+			left: 63%;
+			display: block;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.73;
+			@img: './img/master-5.png';
+		}
+
+		& > div:nth-child(9) {
+			top: 42.5%;
+			left: 46.5%;
+			display: block;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			transform: rotate(351deg);
+
+			@scale: 0.73;
+			@img: './img/master-9.png';
+		}
+
+		& > div:nth-child(10) {
+			top: 41.4%;
+			left: 43%;
+			display: block;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.73;
+			@img: './img/master-8.png';
+		}
+
+		& > div:nth-child(12) {
+			top: 35%;
+			left: 22.9%;
+			display: block;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.73;
+			@img: './img/master-11.png';
+		}
+
+		.buttonContainer {
+			top: 108px;
+			left: 134px;
+		}
+	}
+}
