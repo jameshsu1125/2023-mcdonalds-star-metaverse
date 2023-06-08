@@ -1,0 +1,43 @@
+.Motto {
+	position: relative;
+	margin-top: -35px;
+	width: 100%;
+
+	user-select: none;
+
+	@apply flex justify-center;
+
+	.context {
+		width: 89%;
+		background-color: #ffe07f;
+		@apply flex flex-col items-center justify-center rounded-lg px-9;
+
+		.header {
+			width: 100%;
+			border-bottom: solid 1px #000;
+			color: #000;
+			@apply flex flex-row items-center justify-center py-2 text-xl;
+
+			&::before,
+			&::after {
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 0.7;
+				@img: './img/star.svg';
+
+				@apply mx-1;
+			}
+		}
+
+		.body {
+			width: 100%;
+			color: #000;
+
+			@apply py-2 text-center text-2xl font-bold;
+		}
+	}
+}

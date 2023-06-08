@@ -83,11 +83,14 @@ export const QuestionList = [
 	},
 ];
 
-export const QuestionAnswers = [
-	{ E: 0, I: 0 },
-	{ S: 0, N: 0 },
-	{ T: 0, F: 0 },
-];
-export const QuestionSteps = { unset: 0, fadeIn: 1, question: 1, ugc: 2 };
-export const QuestionState = { steps: QuestionSteps.unset, index: 0, answers: QuestionAnswers };
+export const QuestionAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+export const QuestionDirect = { next: 0, prev: 1, end: 2 };
+export const QuestionSteps = { unset: 0, fadeIn: 1, questionOut: 2, questionIn: 3 };
+export const QuestionState = {
+	index: 0,
+	steps: QuestionSteps.unset,
+	answers: QuestionAnswers,
+	direct: QuestionDirect.next,
+	userName: '',
+};
 export const QuestionContext = createContext(QuestionState);

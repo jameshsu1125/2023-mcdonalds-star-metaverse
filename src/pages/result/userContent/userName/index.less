@@ -1,0 +1,19 @@
+.UserName {
+	margin-left: -15px;
+	width: 100%;
+
+	@apply flex flex-row items-center justify-start text-2xl;
+
+	&::before,
+	&::after {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+
+		@scale: 0.6;
+		@img: './img/list-item.svg';
+		@apply mx-3;
+	}
+}

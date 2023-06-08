@@ -1,0 +1,38 @@
+.UserContent {
+	padding: 58px;
+	width: 100%;
+	height: auto;
+
+	@apply relative flex flex-col items-center justify-start;
+
+	.temp {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		width: 100%;
+		background-image: url(@img);
+		background-size: cover;
+		opacity: 0.3;
+		pointer-events: none;
+
+		@img: './img/temp.jpg';
+	}
+
+	.onePlusOne {
+		width: 100%;
+		@apply flex justify-end;
+
+		& > div {
+			position: relative;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+
+			@scale: 0.21;
+			@img: '../img/onePlusOne.png';
+		}
+	}
+}

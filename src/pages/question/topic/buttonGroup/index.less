@@ -1,31 +1,64 @@
+@import url('../../../../settings/config.less');
 .ButtonGroup {
+	min-height: 180px;
 	width: 100%;
 
 	@apply flex flex-col items-center justify-center space-y-6;
 
-	& > div {
+	& > .button {
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale * 0.5;
-		background-image: url(@img);
-		background-position-y: 0%;
-		background-size: 100%;
-		color: #000;
 		cursor: pointer;
 
-		user-select: none;
 		@scale: 0.58;
 		@img: './img/btn.png';
 
-		@apply flex items-center justify-center text-2xl;
-
 		&:hover {
-			background-position-y: 100%;
+			& > div {
+				background-position-y: 100%;
 
-			@apply text-secondary;
+				@apply text-secondary;
+			}
 		}
 
 		&:active {
-			transform: scale(0.95);
+			& > div {
+				transform: scale(0.95);
+			}
+		}
+
+		& > div {
+			width: 100%;
+			height: 100%;
+			background-image: url(@img);
+			background-position-y: 0%;
+			background-size: 100%;
+			color: #000;
+			pointer-events: none;
+
+			user-select: none;
+
+			@apply flex items-center justify-center text-2xl;
+		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.ButtonGroup {
+		& > .button {
+			&:hover {
+				& > div {
+					background-position-y: 0%;
+					@apply text-black;
+				}
+			}
+
+			&:active {
+				& > div {
+					background-position-y: 100%;
+					@apply text-secondary;
+				}
+			}
 		}
 	}
 }

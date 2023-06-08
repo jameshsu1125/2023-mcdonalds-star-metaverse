@@ -7,13 +7,12 @@ const DROP_RIBBONS_NUMBER = 5;
 
 const Ribbons = memo(() => {
 	const ref = useRef();
-
+	const intervalRef = useRef();
 	useEffect(() => {
-		const createRibbon = () => {
-			new Rain({ container: ref.current, count: DROP_RIBBONS_NUMBER });
-		};
+		const createRibbon = () => new Rain({ container: ref.current, count: DROP_RIBBONS_NUMBER });
 		createRibbon();
-		setInterval(createRibbon, DROP_RIBBONS_TIME);
+		intervalRef.current = setInterval(createRibbon, DROP_RIBBONS_TIME);
+		return () => clearInterval(intervalRef.current);
 	}, []);
 
 	return <div ref={ref} className='Ribbons' />;

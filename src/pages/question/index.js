@@ -8,8 +8,10 @@ import Topic from './topic';
 
 const Question = memo(() => {
 	const value = useState(QuestionState);
-	const [, setState] = value;
-	useEffect(() => {}, []);
+	const [state, setState] = value;
+	useEffect(() => {
+		// console.log(state.answers);
+	}, [state.answers]);
 	return (
 		<QuestionContext.Provider value={value}>
 			<OnloadProvider onload={() => setState((S) => ({ ...S, steps: QuestionSteps.fadeIn }))}>

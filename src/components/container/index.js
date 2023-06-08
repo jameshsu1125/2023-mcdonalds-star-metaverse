@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
 const Container = memo(({ children }) => (
-	<div className='flex min-h-screen w-full justify-center'>
-		<div className='w-full max-w-3xl'>{children}</div>
+	<div className='scrollable flex h-full w-full justify-center overflow-y-scroll'>
+		<div className='relative w-full max-w-3xl'>{children}</div>
 	</div>
 ));
 export default Container;

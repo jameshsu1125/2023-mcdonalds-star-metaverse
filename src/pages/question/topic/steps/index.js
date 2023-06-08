@@ -1,19 +1,73 @@
-import { memo, useContext, useEffect } from 'react';
+import useTween, { Bezier } from 'lesca-use-tween';
+import { memo, useContext, useEffect, useRef } from 'react';
+import { QuestionContext, QuestionList, QuestionSteps } from '../../config';
 import './index.less';
-import { QuestionContext, QuestionList } from '../../config';
+
+const DELAY = 800;
+
+const TenDigit = ({ index, steps }) => {
+	const ref = useRef();
+	const [style, setStyle] = useTween({ scale: 0, rotate: -180 });
+	useEffect(() => {
+		if (steps === QuestionSteps.fadeIn) {
+			setStyle(
+				{ scale: 1, rotate: 0 },
+				{
+					duration: 600,
+					easing: Bezier.easeOutBack,
+					delay: DELAY,
+					onComplete: () => {
+						ref.current?.classList.add('tween');
+					},
+				},
+			);
+		}
+	}, [steps]);
+	return (
+		<div
+			ref={ref}
+			className='ten'
+			style={{ ...style, backgroundPositionY: `${index === QuestionList.length - 1 ? 100 : 0}%` }}
+		/>
+	);
+};
+
+const SingleDigit = ({ index, steps }) => {
+	const ref = useRef();
+	const [style, setStyle] = useTween({ scale: 0, rotate: 180 });
+	useEffect(() => {
+		if (steps === QuestionSteps.fadeIn) {
+			setStyle(
+				{ scale: 1, rotate: 0 },
+				{
+					duration: 600,
+					easing: Bezier.easeOutBack,
+					delay: DELAY + 100,
+					onComplete: () => {
+						ref.current?.classList.add('tween');
+					},
+				},
+			);
+		}
+	}, [steps]);
+
+	return (
+		<div
+			ref={ref}
+			className='single'
+			style={{ ...style, backgroundPositionY: `${index * (100 / 9)}%` }}
+		/>
+	);
+};
 
 const Steps = memo(() => {
 	const [context] = useContext(QuestionContext);
-	const { index } = context;
+	const { index, steps } = context;
 
-	useEffect(() => {}, []);
 	return (
 		<div className='Steps'>
-			<div
-				className='ten'
-				style={{ backgroundPositionY: `${index === QuestionList.length ? 100 : 0}%` }}
-			/>
-			<div className='single' style={{ backgroundPositionY: `${index * (100 / 9)}%` }} />
+			<TenDigit index={index} steps={steps} />
+			<SingleDigit index={index} steps={steps} />
 		</div>
 	);
 });
