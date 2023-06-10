@@ -4,14 +4,23 @@
 	height: 100%;
 	background-color: #ffffde;
 
-	@scale: 0.4;
+	@scale: 0.47;
 
 	& > div {
 		position: absolute;
 	}
 
+	.temp {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url('./img/temp.png');
+		background-position: center top;
+		background-size: 100%;
+	}
+
 	.sun {
-		top: 0%;
+		top: -17%;
 		left: 50%;
 		margin-left: 0 - image-width(@img) * @scale * 0.5;
 		width: image-width(@img) * @scale;
@@ -40,7 +49,7 @@
 
 			.workers {
 				position: absolute;
-				bottom: 44%;
+				bottom: 40%;
 				left: 50%;
 				margin-left: 0 - image-width(@img) * @scale * 0.5;
 				width: image-width(@img) * @scale;
@@ -49,12 +58,132 @@
 				@img: './img/worker.png';
 
 				.man {
+					position: relative;
 					width: 100%;
 					height: 100%;
 					background-image: url(@img);
 					background-size: 100%;
 				}
+
+				.front,
+				.back {
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					& > div {
+						position: absolute;
+						background-size: 100%;
+					}
+				}
+
+				.back {
+					@scale: 0.5;
+					& > div:nth-child(1) {
+						top: 30px;
+						left: 158px;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/b0.png';
+					}
+
+					& > div:nth-child(2) {
+						top: 134px;
+						left: 153px;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/b1.png';
+					}
+
+					& > div:nth-child(3) {
+						top: 298px;
+						left: 431px;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/b2.png';
+					}
+				}
+
+				.front {
+					@scale: 0.5;
+					& > div:nth-child(1) {
+						top: 360px;
+						left: 25px;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/f0.png';
+					}
+
+					& > div:nth-child(2) {
+						top: 235px;
+						left: 431px;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/f1.png';
+					}
+
+					& > div:nth-child(3) {
+						top: 144px;
+						left: 368px;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/f2.png';
+					}
+				}
 			}
+		}
+	}
+
+	.profile {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: auto;
+		@apply flex flex-col items-start justify-start px-10 py-5;
+
+		.characteristic {
+			@apply text-4xl text-black;
+		}
+
+		.name {
+			margin-top: 9px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.7;
+			@img: './img/name.svg';
+		}
+
+		.hashtag {
+			margin-top: 64px;
+			@apply flex flex-col text-base text-black;
+		}
+
+		.percentage {
+			position: absolute;
+			top: 40px;
+			left: 330px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.64;
+			@img: './img/percentage.svg';
 		}
 	}
 }

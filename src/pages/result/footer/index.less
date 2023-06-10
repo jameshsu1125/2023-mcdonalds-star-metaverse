@@ -1,2 +1,19 @@
 .Footer {
+	position: relative;
+	width: 100%;
+	background-color: #000;
+	color: #808080;
+
+	@apply flex flex-row items-center justify-center space-x-10 pb-5 pt-3 text-base;
+
+	& > div {
+		border-color: #808080;
+		@apply border-l-2 border-r-2 px-5;
+
+		& > a {
+			&:hover {
+				@apply underline underline-offset-4;
+			}
+		}
+	}
 }

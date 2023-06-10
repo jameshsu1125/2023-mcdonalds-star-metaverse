@@ -2,22 +2,25 @@
 	padding: 58px;
 	width: 100%;
 	height: auto;
+	background: rgb(47, 17, 63);
+	background: linear-gradient(180deg, rgba(47, 17, 63, 1) 85%, rgba(174, 71, 115, 1) 100%);
+	// background: linear-gradient(180deg, rgba(20, 16, 67, 1) 0%, rgba(116, 27, 87, 1) 100%);
 
 	@apply relative flex flex-col items-center justify-start;
 
-	.temp {
-		position: absolute;
-		top: 0;
-		left: 0;
-		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
-		width: 100%;
-		background-image: url(@img);
-		background-size: cover;
-		opacity: 0.3;
-		pointer-events: none;
+	// .temp {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+	// 	width: 100%;
+	// 	background-image: url(@img);
+	// 	background-size: cover;
+	// 	opacity: 0.3;
+	// 	pointer-events: none;
 
-		@img: './img/temp.jpg';
-	}
+	// 	@img: './img/temp.jpg';
+	// }
 
 	.onePlusOne {
 		width: 100%;

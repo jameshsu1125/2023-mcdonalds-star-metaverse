@@ -8,6 +8,21 @@
 	box-shadow: 0 0 20px #c95e8a;
 	@apply flex flex-row items-center justify-center space-x-6 rounded-2xl px-8;
 
+	&::after {
+		position: absolute;
+		right: 0px;
+		bottom: -26px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+		pointer-events: none;
+
+		@scale: 0.71;
+		@img: './img/star.svg';
+	}
+
 	.box {
 		position: relative;
 		width: 132px;
@@ -24,7 +39,20 @@
 		.name {
 			width: 100%;
 			text-align: center;
-			@apply py-1 text-xl text-secondary;
+			@apply flex flex-row items-center justify-center py-1 text-xl tracking-widest text-secondary;
+
+			.capitalize {
+				margin-top: -3px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+
+				@scale: 0.8;
+				@img: './img/capitalize.svg';
+
+				@apply mx-1;
+			}
 		}
 
 		.productName {
@@ -43,10 +71,11 @@
 	.message {
 		position: relative;
 		height: 100%;
-		@apply flex flex-1 items-center justify-center;
+		@apply flex flex-1 flex-col items-center justify-start;
 
 		.title {
 			position: relative;
+			margin-top: 12px;
 			width: image-width(@img) * @scale;
 			height: image-height(@img) * @scale;
 			background-image: url(@img);
@@ -54,6 +83,25 @@
 
 			@scale: 0.71;
 			@img: './img/title.svg';
+
+			&::after {
+				position: absolute;
+				bottom: -32px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@img: './img/heart.svg';
+			}
+		}
+		.body {
+			margin-top: 23px;
+			width: 100%;
+			text-align: center;
+
+			@apply tracking-widest;
 		}
 	}
 }

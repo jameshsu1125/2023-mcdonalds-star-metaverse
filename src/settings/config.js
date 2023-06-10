@@ -4,7 +4,7 @@ import { ACTION, LOADING_PROCESS_STATE, PAGE, RESULT_STATE } from './constant';
 export const Context = createContext();
 
 export const initialState = {
-	[ACTION.page]: PAGE.result,
+	[ACTION.page]: PAGE.question,
 	[ACTION.LoadingProcess]: LOADING_PROCESS_STATE,
 	[ACTION.result]: RESULT_STATE,
 };
@@ -31,3 +31,6 @@ export const reducer = (state, action) => {
 	if (action.type) return { ...state, [action.type]: action.state };
 	return state;
 };
+
+export const 網站使用條款URL = 'https://www.mcdonalds.com/tw/zh-tw/terms-and-conditions.html';
+export const 隱私權保護聲明URL = 'https://www.mcdonalds.com/tw/zh-tw/privacy-policy.html';

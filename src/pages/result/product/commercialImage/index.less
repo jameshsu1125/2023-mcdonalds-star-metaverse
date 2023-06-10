@@ -1,0 +1,20 @@
+.CommercialImage {
+	position: relative;
+	width: image-width(@img) * @scale;
+	height: image-height(@img) * @scale;
+	background-image: url(@img);
+	background-size: 100%;
+	opacity: 0.8;
+
+	@scale: 0.71;
+	@img: './img/2.png';
+
+	.subtitle {
+		position: absolute;
+		bottom: 4.6%;
+		width: 100%;
+		height: auto;
+		text-align: center;
+		@apply text-3xl;
+	}
+}
