@@ -1,19 +1,20 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import './index.less';
+import ENT from './ENT';
+import ENTSymbols from './ENT/symbols';
 
-const Themes = memo(({ data }) => {
-	const { Theme, Symbol, Description, characteristic, hashtag, productName, personality } = data;
-
+const Theme = memo(() => {
+	useEffect(() => {}, []);
 	return (
 		<div className='Theme'>
 			<div className='content'>
-				{Theme !== '' && <Theme hashtag={hashtag} characteristic={characteristic} />}
-				<div className='description'>
-					{Description && <Description personality={personality} />}
-				</div>
+				<ENT />
+				{/* <div className='description'>description</div> */}
 			</div>
-			<div className='symbols'>{Symbol !== '' && <Symbol productName={productName} />}</div>
+			<div className='symbols'>
+				<ENTSymbols />
+			</div>
 		</div>
 	);
 });
-export default Themes;
+export default Theme;

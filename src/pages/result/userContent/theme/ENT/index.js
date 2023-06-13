@@ -1,60 +1,38 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import './index.less';
 
-export const ENTSymbol = memo(({ productName }) => (
-	<div className='ENTSymbols'>
-		{[...new Array(3).keys()].map((e) => (
-			<div key={`s${e}`} />
-		))}
-		<div className='productName'>{productName}</div>
-	</div>
-));
-
-export const ENTDescription = memo(({ personality }) => (
-	<div className='ENTDescription'>
-		{personality.map((text) => (
-			<p key={text}>{text}</p>
-		))}
-	</div>
-));
-
-export const ENTButtonBack = memo(() => (
-	<div className='ENT_b_b'>
-		<div />
-		<div />
-	</div>
-));
-
-export const ENT = memo(({ hashtag, characteristic }) => (
-	<div className='ENT'>
-		{/* <div className='temp' /> */}
-		<div className='sun' />
-		<div className='earth'>
-			<div>
-				<div className='workers'>
-					<div className='back'>
-						{[...new Array(3).keys()].map((e) => (
-							<div key={`b${e}`} />
-						))}
-					</div>
-					<div className='man' />
-					<div className='front'>
-						{[...new Array(3).keys()].map((e) => (
-							<div key={`f${e}`} />
-						))}
+const 職場星天王 = memo(() => {
+	useEffect(() => {}, []);
+	return (
+		<div className='ENT'>
+			<div className='sun' />
+			<div className='earth'>
+				<div>
+					<div className='workers'>
+						<div className='back'>
+							{[...new Array(3).keys()].map((e) => (
+								<div key={`b${e}`} />
+							))}
+						</div>
+						<div className='man' />
+						<div className='front'>
+							{[...new Array(3).keys()].map((e) => (
+								<div key={`f${e}`} />
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div className='profile'>
-			<div className='characteristic'>{characteristic}</div>
-			<div className='name' />
-			<div className='hashtag'>
-				{hashtag.map((hash) => (
-					<span key={hash}>{hash}</span>
-				))}
+			<div className='profile'>
+				<div className='characteristic'>水土不服只服自己</div>
+				<div className='name' />
+				<div className='hashtag'>
+					<span>#不自由毋寧死</span>
+					<span>#不自由毋寧死</span>
+				</div>
+				<div className='percentage' />
 			</div>
-			<div className='percentage' />
 		</div>
-	</div>
-));
+	);
+});
+export default 職場星天王;
