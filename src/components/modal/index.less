@@ -1,0 +1,237 @@
+.Modal {
+	position: fixed;
+	z-index: 49;
+	width: 100%;
+	height: 100%;
+
+	.bg {
+		background-color: rgba(0, 0, 0, 0.9);
+		@apply absolute top-0 h-full w-full;
+	}
+
+	.context {
+		position: absolute;
+		top: 0;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+
+		@apply p-2;
+
+		.content {
+			position: relative;
+			padding-top: 10px;
+			width: 100%;
+			height: 100%;
+			background-color: #09033a;
+
+			.symbol {
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+
+				@scale: 0.65;
+
+				& > div {
+					position: absolute;
+					background-size: 100%;
+				}
+
+				& > div:nth-child(1) {
+					top: 150px;
+					right: 27px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+					background-image: url(@img);
+
+					@img: './img/s0.png';
+				}
+
+				& > div:nth-child(2) {
+					top: 600px;
+					left: -15px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+					background-image: url(@img);
+
+					@img: './img/s1.png';
+				}
+
+				& > div:nth-child(3) {
+					bottom: 120px;
+					left: 35px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+					background-image: url(@img);
+
+					@img: './img/s2.png';
+				}
+
+				& > div:nth-child(4) {
+					right: 0;
+					bottom: 80px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+					background-image: url(@img);
+
+					@img: './img/s3.png';
+				}
+			}
+
+			@apply flex flex-col items-center justify-center;
+
+			.close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 60px;
+				height: 60px;
+
+				& > * {
+					pointer-events: none;
+				}
+
+				@apply flex items-center justify-center bg-secondary;
+
+				& > svg {
+					width: 30px;
+					height: 30px;
+				}
+
+				&:active {
+					@apply bg-black;
+
+					& > svg {
+						stroke: #ffbc0d;
+					}
+				}
+			}
+
+			.McLogo {
+				position: relative;
+				width: 100%;
+				height: 60px;
+				background-image: url('./img/logo.svg');
+				background-position: center;
+				background-size: auto 90%;
+				background-repeat: no-repeat;
+				@apply my-5;
+			}
+
+			.containers {
+				position: relative;
+				width: 100%;
+				height: calc(~'100% - 100px - 160px');
+
+				@apply flex items-center justify-center;
+
+				& > div {
+					position: relative;
+					padding: 4px;
+					width: auto;
+					height: 100%;
+					background: rgb(21, 15, 70);
+					background: linear-gradient(
+						132deg,
+						rgba(21, 15, 70, 1) 0%,
+						rgba(217, 117, 150, 1) 33%,
+						rgba(107, 30, 93, 1) 66%,
+						rgba(7, 15, 51, 1) 100%
+					);
+					@apply rounded-2xl;
+
+					& > div {
+						position: relative;
+						overflow: hidden;
+						width: auto;
+						height: 100%;
+
+						@apply rounded-xl;
+
+						& > img {
+							width: auto;
+							height: 100%;
+						}
+					}
+				}
+			}
+
+			.footer {
+				position: relative;
+				width: 100%;
+
+				@scale: 0.65;
+
+				@apply flex flex-col items-center justify-center space-y-5 py-5;
+
+				.slogan {
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+					background-image: url(@img);
+					background-size: 100%;
+
+					@img: './img/slogan.svg';
+				}
+
+				.steps {
+					width: 100%;
+
+					@apply flex flex-row items-center justify-center space-x-2;
+
+					& > div {
+						height: 100%;
+						background-size: 100%;
+						background-repeat: no-repeat;
+					}
+
+					& > div:nth-child(1) {
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/step1.svg';
+					}
+
+					& > div:nth-child(2) {
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+						transform: translateY(11px);
+
+						@scale: 0.75;
+						@img: './img/arrow.svg';
+					}
+
+					& > div:nth-child(3) {
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/step2.svg';
+					}
+
+					& > div:nth-child(4) {
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+						transform: translateY(11px);
+
+						@scale: 0.75;
+						@img: './img/arrow.svg';
+					}
+
+					& > div:nth-child(5) {
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+
+						@img: './img/step3.svg';
+					}
+				}
+			}
+		}
+	}
+}

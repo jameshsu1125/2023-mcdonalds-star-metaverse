@@ -87,7 +87,7 @@ export const QuestionAnswers = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 export const QuestionDirect = { next: 0, prev: 1, end: 2 };
 export const QuestionSteps = { unset: 0, fadeIn: 1, questionOut: 2, questionIn: 3 };
 export const QuestionState = {
-	index: 9,
+	index: 0, // 9,
 	steps: QuestionSteps.unset,
 	answers: QuestionAnswers,
 	direct: QuestionDirect.next,

@@ -1,41 +1,54 @@
-import { memo, useEffect } from 'react';
+/* eslint-disable react/no-array-index-key */
+import { Fragment, memo, useMemo } from 'react';
 import './index.less';
 
-const Box = () => {
+const Box = ({ data }) => {
+	const { name, productName, image } = data;
+	const currentName = useMemo(() => {
+		const op = name.split('').map((W) => {
+			if (W === '星') return <div className='capitalize' />;
+			return W;
+		});
+		return op;
+	}, [name]);
+
 	return (
 		<div className='box'>
-			<div className='image' />
+			<div className='image' style={{ backgroundImage: `url(${image})` }} />
 			<div className='name'>
-				<div className='capitalize' />
-				際超模
+				{currentName.map((e, i) => (
+					<Fragment key={`d${i}`}>{e}</Fragment>
+				))}
 			</div>
 			<div className='productName'>
-				<div>OREO冰炫風</div>
+				<div>{productName}</div>
 			</div>
 		</div>
 	);
 };
 
-const Message = () => {
+const Message = ({ data }) => {
+	const { troll } = data;
 	return (
 		<div className='message'>
 			<div className='title' />
 			<div className='body'>
-				<p>無法忍受無聊的你</p>
-				<p>特別喜歡跟講話有趣的人當朋友</p>
-				<p>讓生活充滿「笑死」！</p>
+				{troll.map((e) => (
+					<p key={e}>{e}</p>
+				))}
 			</div>
 		</div>
 	);
 };
 
-const Buddy = memo(() => {
-	useEffect(() => {}, []);
+const Buddy = memo(({ data }) => {
+	const { buddies } = data;
 	return (
 		<div className='Buddy'>
-			<Box />
-			<Box />
-			<Message />
+			{buddies.map((e) => (
+				<Box key={JSON.stringify(e)} data={e} />
+			))}
+			<Message data={data} />
 		</div>
 	);
 });

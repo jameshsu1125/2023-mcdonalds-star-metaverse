@@ -3,7 +3,7 @@ import useTween, { Bezier } from 'lesca-use-tween';
 import { memo, useContext, useEffect, useId, useRef, forwardRef, useImperativeHandle } from 'react';
 import { QuestionContext, QuestionDirect, QuestionSteps } from '../../config';
 import './index.less';
-import { setMaxLength } from './useSort';
+import { findID, setMaxLength } from './useSort';
 import { Context } from '../../../../settings/config';
 import { ACTION, PAGE } from '../../../../settings/constant';
 
@@ -29,7 +29,7 @@ const Button = ({ steps, setState, input }) => {
 							setState((S) => {
 								setContext({
 									type: ACTION.result,
-									state: { userName: currentValue, answers: S.answers },
+									state: { userName: currentValue, id: findID(S.answers) },
 								});
 								return { ...S, userName: currentValue };
 							});

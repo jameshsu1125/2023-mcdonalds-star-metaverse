@@ -1,24 +1,34 @@
-import { memo, useEffect } from 'react';
-import './index.less';
-import UserName from './userName';
-import Theme from './theme';
-import Motto from './motto';
+import { memo, useContext, useMemo } from 'react';
+import { Context } from '../../../settings/config';
+import { ACTION } from '../../../settings/constant';
+import { ResultContentsList } from '../config';
 import Buddy from './buddy';
 import Buttons from './buttons';
+import './index.less';
+import Motto from './motto';
+import Themes from './theme';
+import UserName from './userName';
 
 const UserContent = memo(() => {
-	useEffect(() => {}, []);
+	const [context] = useContext(Context);
+	const { id, userName } = context[ACTION.result];
+
+	const data = useMemo(() => {
+		const [content] = ResultContentsList.filter((e) => e.ID === id);
+		return content;
+	}, [id]);
+
 	return (
 		<div className='UserContent'>
 			{/* <div className='temp' /> */}
 			<div className='onePlusOne'>
 				<div />
 			</div>
-			<UserName />
-			<Theme />
-			<Motto />
-			<Buddy />
-			<Buttons />
+			<UserName userName={userName} />
+			<Themes data={data} />
+			<Motto data={data} />
+			<Buddy data={data} />
+			<Buttons data={data} />
 		</div>
 	);
 });
