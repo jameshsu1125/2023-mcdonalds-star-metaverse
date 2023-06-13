@@ -41,7 +41,7 @@ export const IDs = {
 
 export const RESULT_STATE = {
 	userName: '誰誰誰誰誰誰誰誰誰',
-	id: IDs['8INF'],
+	id: IDs['2ENF'],
 };
 
 export const MODAL_STATE = {

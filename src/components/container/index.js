@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import './index.less';
 
 const Container = memo(({ children }) => (
 	<div className='scrollable flex h-full w-full justify-center overflow-y-scroll'>

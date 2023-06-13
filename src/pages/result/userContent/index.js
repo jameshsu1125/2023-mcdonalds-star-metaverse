@@ -1,7 +1,7 @@
 import { memo, useContext, useMemo } from 'react';
 import { Context } from '../../../settings/config';
 import { ACTION } from '../../../settings/constant';
-import { ResultContentsList } from '../config';
+import { ResultContentsList, ResultContext } from '../config';
 import Buddy from './buddy';
 import Buttons from './buttons';
 import './index.less';
@@ -12,6 +12,8 @@ import UserName from './userName';
 const UserContent = memo(() => {
 	const [context] = useContext(Context);
 	const { id, userName } = context[ACTION.result];
+
+	const [state] = useContext(ResultContext);
 
 	const data = useMemo(() => {
 		const [content] = ResultContentsList.filter((e) => e.ID === id);
@@ -25,7 +27,7 @@ const UserContent = memo(() => {
 				<div />
 			</div>
 			<UserName userName={userName} />
-			<Themes data={data} />
+			<Themes data={data} state={state} />
 			<Motto data={data} />
 			<Buddy data={data} />
 			<Buttons data={data} />

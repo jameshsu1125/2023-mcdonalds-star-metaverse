@@ -34,7 +34,6 @@ export const ENFBack = memo(() => (
 
 export const ENF = memo(({ hashtag, characteristic }) => (
 	<div className='ENF'>
-		{/* <div className='temp' /> */}
 		<div className='bg' />
 		<div className='s0' />
 		<div className='s1' />

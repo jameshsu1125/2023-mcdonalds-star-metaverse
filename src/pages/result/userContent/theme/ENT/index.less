@@ -10,15 +10,6 @@
 		position: absolute;
 	}
 
-	.temp {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		// background-image: url('./img/temp.png');
-		background-position: center top;
-		background-size: 100%;
-	}
-
 	.sun {
 		top: -17%;
 		left: 50%;
@@ -74,6 +65,9 @@
 					& > div {
 						position: absolute;
 						background-size: 100%;
+						animation-name: swing_r8;
+						animation-timing-function: ease-in-out;
+						animation-iteration-count: infinite;
 					}
 				}
 
@@ -85,6 +79,8 @@
 						width: image-width(@img) * @scale;
 						height: image-height(@img) * @scale;
 						background-image: url(@img);
+						animation-duration: 10s;
+						animation-delay: -2s;
 
 						@img: './img/b0.png';
 					}
@@ -95,16 +91,21 @@
 						width: image-width(@img) * @scale;
 						height: image-height(@img) * @scale;
 						background-image: url(@img);
+						animation-duration: 12s;
+						animation-delay: -5s;
+						animation-direction: reverse;
 
 						@img: './img/b1.png';
 					}
 
 					& > div:nth-child(3) {
 						top: 298px;
-						left: 431px;
+						left: 431px + 20px;
 						width: image-width(@img) * @scale;
 						height: image-height(@img) * @scale;
 						background-image: url(@img);
+						animation-duration: 12s;
+						animation-delay: -9s;
 
 						@img: './img/b2.png';
 					}
@@ -118,16 +119,20 @@
 						width: image-width(@img) * @scale;
 						height: image-height(@img) * @scale;
 						background-image: url(@img);
+						animation-duration: 8s;
+						animation-delay: -3s;
 
 						@img: './img/f0.png';
 					}
 
 					& > div:nth-child(2) {
 						top: 235px;
-						left: 431px;
+						left: 431px + 20px;
 						width: image-width(@img) * @scale;
 						height: image-height(@img) * @scale;
 						background-image: url(@img);
+						animation-duration: 12s;
+						animation-delay: -9s;
 
 						@img: './img/f1.png';
 					}
@@ -138,6 +143,9 @@
 						width: image-width(@img) * @scale;
 						height: image-height(@img) * @scale;
 						background-image: url(@img);
+						animation-duration: 10s;
+						animation-delay: -8s;
+						animation-direction: reverse;
 
 						@img: './img/f2.png';
 					}
@@ -197,6 +205,8 @@
 
 	& > div:not(.productName) {
 		position: absolute;
+		animation-name: circle_r30;
+		animation-iteration-count: infinite;
 	}
 
 	& > div:nth-child(1) {
@@ -206,6 +216,9 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation-duration: 5s;
+		animation-delay: -8s;
+		animation-direction: reverse;
 
 		@img: './img/o0.png';
 	}
@@ -217,6 +230,9 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation-duration: 5s;
+		animation-delay: -2s;
+		animation-direction: normal;
 
 		@img: './img/o1.png';
 	}
@@ -228,6 +244,9 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation-duration: 5s;
+		animation-delay: -4s;
+		animation-direction: normal;
 
 		@scale: 0.3;
 		@img: './img/o2.png';

@@ -6,7 +6,7 @@ let s = setInterval(() => {
 }, 30);
 
 let index = 0;
-const r = 15;
+const r = 30;
 let out = '';
 const render = () => {
 	const x = Math.cos((Math.PI / 180) * index) * r;
