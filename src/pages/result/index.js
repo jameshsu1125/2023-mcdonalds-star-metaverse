@@ -1,26 +1,33 @@
 import Click from 'lesca-click';
 import OnloadProvider from 'lesca-react-onload';
-import { memo, useEffect, useState } from 'react';
-import Canvas from '../../components/canvas';
+import { memo, useContext, useEffect, useState } from 'react';
 import Container from '../../components/container';
-import { ResultContext, ResultState, ResultSteps } from './config';
+import { Context } from '../../settings/config';
+import { ResultContext, ResultSteps } from './config';
 import Footer from './footer';
 import './index.less';
 import Product from './product';
 import UserContent from './userContent';
+import { ACTION } from '../../settings/constant';
 
 const Question = memo(() => {
-	const value = useState(ResultState);
-	const [state, setState] = value;
-	const { steps } = state;
+	const [context] = useContext(Context);
+	const { answers } = context[ACTION.result];
+
+	const value = useState(ResultContext);
+	const [, setState] = value;
 
 	useEffect(() => {
 		Click.setEnabled(false);
 	}, []);
 
+	useEffect(() => {
+		console.log(answers);
+	}, [answers]);
+
 	return (
 		<ResultContext.Provider value={value}>
-			<OnloadProvider onload={() => setState((S) => ({ ...S, steps: ResultSteps.combineImage }))}>
+			<OnloadProvider onload={() => setState((S) => ({ ...S, steps: ResultSteps.fadeIn }))}>
 				<div className='Result'>
 					<Container>
 						<UserContent />
@@ -29,7 +36,6 @@ const Question = memo(() => {
 					</Container>
 				</div>
 			</OnloadProvider>
-			{steps === ResultSteps.combineImage && <Canvas />}
 		</ResultContext.Provider>
 	);
 });
