@@ -2,6 +2,7 @@ export const ACTION = {
 	page: '頁面',
 	LoadingProcess: '讀取產生中',
 	result: '紀錄結果',
+	modal: '下載圖',
 };
 
 export const PAGE = {
@@ -27,9 +28,25 @@ export const LOADING_PROCESS_STATE = {
 	body: '',
 };
 
+export const IDs = {
+	'1ENT': 'ENT',
+	'2ENF': 'ENF',
+	'3ESF': 'ESF',
+	'4INT': 'INT',
+	'5EST': 'EST',
+	'6ISF': 'ISF',
+	'7IST': 'IST',
+	'8INF': 'INF ',
+};
+
 export const RESULT_STATE = {
-	userName: 'James',
-	answers: ['E', 'F', 'N', 'F', 'N', 'F', 'E', 'S', 'I'],
+	userName: '誰誰誰誰誰誰誰誰誰',
+	id: IDs['8INF'],
+};
+
+export const MODAL_STATE = {
+	enabled: false,
+	body: '',
 };
 
 export const TRANSITION = {
