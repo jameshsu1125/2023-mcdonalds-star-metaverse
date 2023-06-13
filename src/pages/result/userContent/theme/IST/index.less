@@ -1,0 +1,236 @@
+.IST {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffde;
+
+	@scale: 0.77;
+
+	& > div {
+		position: absolute;
+		background-size: 100%;
+	}
+
+	.temp {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		// background-image: url('./img/temp.png');
+		background-position: center top;
+		background-size: 100%;
+		opacity: 0.5;
+	}
+
+	.f0 {
+		top: 57px;
+		left: 17px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/f0.png';
+	}
+
+	.f1 {
+		top: 109px;
+		left: 92px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/f1.png';
+	}
+
+	.f2 {
+		top: 442px;
+		left: 87px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/f2.png';
+	}
+
+	.f3 {
+		top: 291px;
+		left: 65px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/f3.png';
+	}
+
+	.f4 {
+		top: 61px;
+		left: 450px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@img: './img/f4.png';
+	}
+
+	.profile {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: auto;
+		@apply flex flex-col items-start justify-start px-10 py-5;
+
+		& > div {
+			position: relative;
+		}
+
+		.characteristic {
+			color: #ffe656;
+			@apply text-4xl tracking-tighter;
+		}
+
+		.name {
+			margin-top: 9px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.7;
+			@img: './img/name.svg';
+		}
+
+		.hashtag {
+			margin-top: 64px;
+			@apply flex flex-col text-base text-black;
+		}
+
+		.percentage {
+			position: absolute;
+			top: 17px;
+			left: 324px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.72;
+			@img: './img/percentage.svg';
+		}
+	}
+}
+
+.ISTSymbols {
+	position: relative;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+
+	@scale: 0.77;
+
+	& > div:not(.productName) {
+		position: absolute;
+	}
+
+	& > div:nth-child(1) {
+		top: 351px;
+		right: -66px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@img: './img/s0.png';
+	}
+
+	& > div:nth-child(2) {
+		top: 541px;
+		left: -33px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.75;
+		@img: './img/s1.png';
+	}
+
+	& > div:nth-child(3) {
+		top: 711px;
+		right: -51px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.75;
+		@img: './img/s2.png';
+	}
+
+	.productName {
+		position: absolute;
+		top: 156px;
+		left: -18px;
+		background-color: #000;
+		letter-spacing: 5px;
+
+		&::before {
+			position: absolute;
+			top: 0 - image-height(@img) * @scale;
+			left: 0;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+
+			@scale: 0.7;
+			@img: '../img/flag.svg';
+		}
+
+		@apply rounded-r-xl py-1 pl-14 pr-4 text-2xl;
+	}
+}
+
+.ISTDescription {
+	width: 100%;
+	height: 100%;
+
+	@apply flex flex-col items-center justify-center pb-6 text-lg tracking-wider;
+	& > p:nth-child(2) {
+		color: #6b4433;
+		@apply underline decoration-secondary underline-offset-4;
+	}
+}
+
+.IST_b_b {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	& > div {
+		position: absolute;
+	}
+
+	& > div:nth-child(1) {
+		top: -21px;
+		left: -12px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.65;
+		@img: './img/b0.png';
+	}
+
+	& > div:nth-child(2) {
+		top: -120px;
+		left: 469px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.65;
+		@img: './img/b1.png';
+	}
+}

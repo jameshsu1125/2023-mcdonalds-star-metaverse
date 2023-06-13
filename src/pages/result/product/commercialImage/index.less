@@ -2,19 +2,158 @@
 	position: relative;
 	width: image-width(@img) * @scale;
 	height: image-height(@img) * @scale;
-	background-image: url(@img);
-	background-size: 100%;
-	opacity: 0.8;
 
 	@scale: 0.71;
 	@img: './img/2.png';
 
-	.subtitle {
-		position: absolute;
-		bottom: 4.6%;
+	& > div {
+		position: relative;
 		width: 100%;
-		height: auto;
-		text-align: center;
-		@apply text-3xl;
+		height: 100%;
+		.image {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-position: center top;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+		.subtitle {
+			position: absolute;
+			bottom: 4.6%;
+			height: auto;
+			text-align: center;
+		}
+	}
+
+	.CI_ENT {
+		.image {
+			background-image: url('./img/0.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply text-3xl;
+		}
+	}
+
+	.CI_ENF {
+		.image {
+			background-image: url('./img/1.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply text-3xl;
+		}
+	}
+
+	.CI_ESF {
+		.image {
+			background-image: url('./img/2.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply text-3xl;
+		}
+	}
+
+	.CI_INT {
+		.image {
+			background-image: url('./img/3.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply text-3xl;
+		}
+	}
+
+	.CI_EST {
+		.image {
+			background-image: url('./img/4.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply text-3xl;
+		}
+	}
+
+	.CI_ISF {
+		.image {
+			background-image: url('./img/5.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply flex flex-row items-center justify-center text-3xl;
+
+			& > div:nth-child(3) {
+				text-indent: -14px;
+			}
+
+			& > div:nth-child(1) {
+				text-indent: -3px;
+			}
+
+			& > div {
+				@apply w-48;
+			}
+		}
+	}
+
+	.CI_IST {
+		.image {
+			background-image: url('./img/6.png');
+		}
+
+		.subtitle {
+			width: 100%;
+
+			@apply flex flex-row items-center justify-center text-3xl;
+
+			& > div {
+				@apply m-6;
+			}
+
+			& > div:nth-child(1) {
+				transform: translateX(-9px);
+			}
+
+			& > div:nth-child(2) {
+				transform: translateX(-20px);
+			}
+		}
+	}
+
+	.CI_INF {
+		.image {
+			background-image: url('./img/7.png');
+		}
+		.subtitle {
+			width: 100%;
+
+			@apply flex flex-row items-center justify-center text-3xl;
+
+			& > div:nth-child(3) {
+				line-height: 22px;
+				transform: translateY(14px) translateX(4px);
+
+				& > span {
+					@apply text-lg;
+				}
+			}
+
+			& > div:nth-child(1) {
+				transform: translateX(-17px);
+			}
+
+			& > div {
+				width: 10.8rem;
+			}
+		}
 	}
 }
