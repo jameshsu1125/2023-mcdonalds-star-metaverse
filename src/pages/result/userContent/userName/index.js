@@ -1,12 +1,7 @@
-import { memo, useContext, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import './index.less';
-import { Context } from '../../../../settings/config';
-import { ACTION } from '../../../../settings/constant';
 
-const UserName = memo(() => {
-	const [context] = useContext(Context);
-	const { userName } = context[ACTION.result];
-
+const UserName = memo(({ userName }) => {
 	useEffect(() => {}, []);
 	return (
 		<div className='UserName'>
