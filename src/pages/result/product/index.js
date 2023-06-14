@@ -12,6 +12,11 @@ const Button = () => {
 	useEffect(() => {
 		Click.add(`#${id}`, () => {
 			window.open(麥當勞官網URL);
+			window.dataLayer?.push({
+				event: 'click_btn',
+				eventCategory: 'engagement',
+				eventLabel: '看更多明星級美味',
+			});
 		});
 		return () => Click.remove(`#${id}`);
 	}, []);

@@ -1,4 +1,5 @@
 import OnloadProvider from 'lesca-react-onload';
+import QueryString from 'lesca-url-parameters';
 import { memo, useContext, useEffect, useState } from 'react';
 import { Context } from '../../settings/config';
 import { ACTION } from '../../settings/constant';
@@ -21,6 +22,11 @@ const Landing = memo(() => {
 
 	useEffect(() => {
 		setContext({ type: ACTION.LoadingProcess, state: { enabled: true } });
+		window.dataLayer?.push({
+			event: 'pageview',
+			eventCategory: 'engagement',
+			eventLabel: `${QueryString.file().split('.')[0]}_${document.title}`,
+		});
 	}, []);
 
 	return (

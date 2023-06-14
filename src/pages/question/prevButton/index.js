@@ -20,6 +20,11 @@ const PrevButton = memo(() => {
 	useEffect(() => {
 		Click.add(`#${id}`, () => {
 			setState((S) => ({ ...S, steps: QuestionSteps.questionOut, direct: QuestionDirect.prev }));
+			window.dataLayer?.push({
+				event: 'click_btn',
+				eventCategory: 'engagement',
+				eventLabel: '回上一題',
+			});
 		});
 	}, []);
 

@@ -4,7 +4,7 @@ import { ACTION, LOADING_PROCESS_STATE, MODAL_STATE, PAGE, RESULT_STATE } from '
 export const Context = createContext();
 
 export const initialState = {
-	[ACTION.page]: PAGE.landing,
+	[ACTION.page]: PAGE.result,
 	[ACTION.LoadingProcess]: LOADING_PROCESS_STATE,
 	[ACTION.result]: RESULT_STATE,
 	[ACTION.modal]: MODAL_STATE,

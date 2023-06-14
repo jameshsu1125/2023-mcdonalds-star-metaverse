@@ -3,7 +3,8 @@ import Click from 'lesca-click';
 import OnloadProvider from 'lesca-react-onload';
 import QueryString from 'lesca-url-parameters';
 import useTween from 'lesca-use-tween';
-import { memo, useContext, useEffect, useId, useRef, useState } from 'react';
+import { memo, useContext, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { ResultNames } from '../../pages/result/config';
 import { Context } from '../../settings/config';
 import { ACTION, TRANSITION } from '../../settings/constant';
 import './index.less';
@@ -15,6 +16,7 @@ const CloseButton = ({ setTran }) => {
 			Click.remove(`#${id}`);
 			setTran(TRANSITION.fadeOut);
 		});
+
 		return () => Click.remove(`#${id}`);
 	}, []);
 
@@ -52,7 +54,7 @@ const CopyButton = () => {
 	return <div id={id} />;
 };
 
-const Content = ({ tran, body, setContext, setTran }) => {
+const Content = ({ tran, body, setContext, setTran, resultName }) => {
 	const ref = useRef();
 
 	const [style, setStyle] = useTween({ opacity: 0, y: window.innerHeight });
@@ -91,7 +93,22 @@ const Content = ({ tran, body, setContext, setTran }) => {
 			<div className='McLogo' />
 			<div ref={ref} className='containers'>
 				<div className='module-border-wrap' style={{ width: `${width}px` }}>
-					<div className='module'>{body !== '' && <img src={body} alt='' />}</div>
+					<div className='module'>
+						{body !== '' && (
+							<img
+								onClick={() => {
+									window.dataLayer?.push({
+										event: 'click_btn',
+										eventCategory: 'engagement',
+										eventLabel: `星級咖新測長按儲存Ｏ_${resultName}`,
+									});
+								}}
+								role='none'
+								src={body}
+								alt=''
+							/>
+						)}
+					</div>
 				</div>
 			</div>
 			<div className='footer'>
@@ -126,6 +143,21 @@ const Modal = memo(() => {
 	const { body } = context[ACTION.modal];
 	const [tran, setTran] = useState(TRANSITION.unset);
 
+	const { id } = context[ACTION.result];
+
+	const resultName = useMemo(() => {
+		const [currentResult] = Object.values(ResultNames).filter((item) => item.ID === id);
+		return currentResult.name;
+	}, [id]);
+
+	useEffect(() => {
+		window.dataLayer?.push({
+			event: 'click_btn',
+			eventCategory: 'engagement',
+			eventLabel: '星級咖新測結果-IG Story分享步驟',
+		});
+	}, []);
+
 	return (
 		<OnloadProvider
 			onload={() => {
@@ -135,7 +167,13 @@ const Modal = memo(() => {
 			<div className='Modal'>
 				<Background tran={tran} />
 				<div className='context'>
-					<Content tran={tran} body={body} setContext={setContext} setTran={setTran} />
+					<Content
+						tran={tran}
+						body={body}
+						setContext={setContext}
+						setTran={setTran}
+						resultName={resultName}
+					/>
 				</div>
 			</div>
 		</OnloadProvider>

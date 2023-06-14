@@ -7,7 +7,7 @@ import './index.less';
 const DELAY = 2500;
 
 const Label = ({ label }) => <span>{label}</span>;
-const Button = memo(({ label, type, index }) => {
+const Button = memo(({ label, type, index, gtm }) => {
 	const [state, setState] = useContext(QuestionContext);
 	const { steps } = state;
 
@@ -22,6 +22,13 @@ const Button = memo(({ label, type, index }) => {
 				const { answers, index: idx } = S;
 				const cloneAnswer = [...answers];
 				cloneAnswer[idx] = type;
+
+				window.dataLayer?.push({
+					event: 'click_btn',
+					eventCategory: 'engagement',
+					eventLabel: `${gtm}_${label}`,
+				});
+
 				return {
 					...S,
 					answers: cloneAnswer,
@@ -91,7 +98,13 @@ const ButtonGroup = memo(() => {
 	return (
 		<div className='ButtonGroup'>
 			{answers.map((item, i) => (
-				<Button key={JSON.stringify(item)} label={item.text} type={item.type} index={i} />
+				<Button
+					key={JSON.stringify(item)}
+					label={item.text}
+					type={item.type}
+					index={i}
+					gtm={item.gtm}
+				/>
 			))}
 		</div>
 	);

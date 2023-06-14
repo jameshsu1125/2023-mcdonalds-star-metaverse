@@ -16,10 +16,23 @@ const DownloadButton = memo(() => {
 		Click.add(`#${id}`, () => {
 			if (device === 'mobile') {
 				setContext({ type: ACTION.modal, state: { enabled: true } });
+				window.dataLayer?.push({
+					event: 'click_btn',
+					eventCategory: 'engagement',
+					eventLabel: '下載圖片',
+				});
 			}
 		});
 		return () => Click.remove(`#${id}`);
 	}, [device]);
+
+	const onClick = () => {
+		window.dataLayer?.push({
+			event: 'click_btn',
+			eventCategory: 'engagement',
+			eventLabel: '下載圖片',
+		});
+	};
 
 	useEffect(() => {
 		const resize = () => setDevice(UserAgent.get());
@@ -34,7 +47,7 @@ const DownloadButton = memo(() => {
 					<div>下載圖片</div>
 				</button>
 			)) || (
-				<a href={body} className='button' download='麥當勞1+1星級點'>
+				<a href={body} onClick={onClick} className='button' download='麥當勞1+1星級點'>
 					<div>下載圖片</div>
 				</a>
 			)}
@@ -49,6 +62,11 @@ const AgainButton = memo(() => {
 		Click.add(`#${id}`, () => {
 			Click.remove(`#${id}`);
 			setContext({ type: ACTION.page, state: PAGE.question });
+			window.dataLayer?.push({
+				event: 'click_btn',
+				eventCategory: 'engagement',
+				eventLabel: '再測一次',
+			});
 		});
 		return () => Click.remove(`#${id}`);
 	}, []);

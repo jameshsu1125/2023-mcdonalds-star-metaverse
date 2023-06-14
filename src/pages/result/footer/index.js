@@ -11,9 +11,19 @@ const Footer = memo(() => {
 	useEffect(() => {
 		Click.add(`#${termsID}`, () => {
 			window.open(網站使用條款URL);
+			window.dataLayer?.push({
+				event: 'click_btn',
+				eventCategory: 'engagement',
+				eventLabel: '網站使用條款',
+			});
 		});
 		Click.add(`#${privacyID}`, () => {
 			window.open(隱私權保護聲明URL);
+			window.dataLayer?.push({
+				event: 'click_btn',
+				eventCategory: 'engagement',
+				eventLabel: '隱私權保護聲明',
+			});
 		});
 	}, []);
 	return (
