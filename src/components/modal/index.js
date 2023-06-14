@@ -100,7 +100,7 @@ const Content = ({ tran, body, setContext, setTran, resultName }) => {
 									window.dataLayer?.push({
 										event: 'click_btn',
 										eventCategory: 'engagement',
-										eventLabel: `星級咖新測長按儲存Ｏ_${resultName}`,
+										eventLabel: `星級咖新測長按儲存_${resultName}`,
 									});
 								}}
 								role='none'
