@@ -1,5 +1,6 @@
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import './index.less';
+import { TweenProvider } from 'lesca-use-tween';
 
 export const INTSymbol = memo(({ productName }) => (
 	<div className='INTSymbols'>
@@ -32,23 +33,43 @@ export const INTBack = memo(() => (
 	</div>
 ));
 
-export const INT = memo(({ hashtag, characteristic }) => (
-	<div className='INT'>
-		{/* <div className='temp' /> */}
-		<div className='ground'>
-			{[...new Array(17).keys()].map((key) => (
-				<div key={key} />
-			))}
-		</div>
-		<div className='profile'>
-			<div className='characteristic'>{characteristic}</div>
-			<div className='name' />
-			<div className='hashtag'>
-				{hashtag.map((hash) => (
-					<span key={hash}>{`#${hash}`}</span>
-				))}
+export const INT = memo(({ hashtag, characteristic, state }) => {
+	const { steps } = state;
+
+	const [tweenStyle, setTweenStyle] = useState();
+
+	useEffect(() => {
+		if (steps === 1) {
+			setTweenStyle({ y: 0 });
+		}
+	}, [steps]);
+
+	return (
+		<div className='INT'>
+			<TweenProvider defaultStyle={{ y: 1000 }} tweenStyle={tweenStyle} options={{ duration: 700 }}>
+				<div className='ground'>
+					{[...new Array(17).keys()].map((key, index) => (
+						<TweenProvider
+							key={key}
+							defaultStyle={{ y: 1000 }}
+							tweenStyle={tweenStyle}
+							options={{ duration: 1000, delay: 30 * index }}
+						>
+							<div />
+						</TweenProvider>
+					))}
+				</div>
+			</TweenProvider>
+			<div className='profile'>
+				<div className='characteristic'>{characteristic}</div>
+				<div className='name' />
+				<div className='hashtag'>
+					{hashtag.map((hash) => (
+						<span key={hash}>{`#${hash}`}</span>
+					))}
+				</div>
+				<div className='percentage' />
 			</div>
-			<div className='percentage' />
 		</div>
-	</div>
-));
+	);
+});

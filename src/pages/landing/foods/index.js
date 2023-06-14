@@ -3,14 +3,14 @@ import { memo, useContext, useEffect, useRef } from 'react';
 import { LandingContext, LandingSteps } from '../config';
 import './index.less';
 
-const OFFSET_DELAY = 1000;
-const random = () => Math.random() * OFFSET_DELAY;
+const OFFSET_DELAY = 500;
+const random = () => 1200 + Math.random() * OFFSET_DELAY;
 
 const Coke1 = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
@@ -31,7 +31,7 @@ const Coffee = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
@@ -52,7 +52,7 @@ const Fried = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
@@ -73,7 +73,7 @@ const McFlurry = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
@@ -94,7 +94,7 @@ const ChickenNuggets = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
@@ -115,12 +115,12 @@ const FriedChicken = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
 					duration: 1000,
-					delay: Math.random() * 2000,
+					delay: random(),
 					onComplete: () => {
 						ref.current?.classList.add('swing-5');
 						if (Math.random > 0.5) ref.current?.classList.add('reverse');
@@ -136,12 +136,12 @@ const Hamburger = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
 					duration: 1000,
-					delay: Math.random() * 2000,
+					delay: random(),
 					onComplete: () => {
 						ref.current?.classList.add('swing-7');
 						if (Math.random > 0.5) ref.current?.classList.add('reverse');
@@ -157,12 +157,12 @@ const Coke0 = ({ steps }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ y: window.innerHeight * 0.4 });
 	useEffect(() => {
-		if (steps === LandingSteps.buttonFadeIned) {
+		if (steps === LandingSteps.fadeIned) {
 			setStyle(
 				{ y: 0 },
 				{
 					duration: 1000,
-					delay: Math.random() * 2000,
+					delay: random(),
 					onComplete: () => {
 						ref.current?.classList.add('swing-5');
 						if (Math.random > 0.5) ref.current?.classList.add('reverse');

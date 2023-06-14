@@ -1,5 +1,6 @@
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import './index.less';
+import { TweenProvider } from 'lesca-use-tween';
 
 export const ESFSymbol = memo(({ productName }) => (
 	<div className='ESFSymbols'>
@@ -30,26 +31,59 @@ export const ESFBack = memo(() => (
 	</div>
 ));
 
-export const ESF = memo(({ hashtag, characteristic }) => (
-	<div className='ESF'>
-		<div className='f0' />
-		<div className='f1' />
-		<div className='ground'>
-			<div>
-				{[...new Array(10).keys()].map((e) => (
-					<div key={e} />
-				))}
+export const ESF = memo(({ hashtag, characteristic, state }) => {
+	const { steps } = state;
+
+	const [tweenStyle, setTweenStyle] = useState();
+
+	useEffect(() => {
+		if (steps === 1) {
+			setTweenStyle({ y: 0 });
+		}
+	}, [steps]);
+
+	return (
+		<div className='ESF'>
+			<TweenProvider defaultStyle={{ y: 1000 }} tweenStyle={tweenStyle} options={{ duration: 700 }}>
+				<div className='f0' />
+			</TweenProvider>
+			<TweenProvider
+				defaultStyle={{ y: 1000 }}
+				tweenStyle={tweenStyle}
+				options={{ duration: 1000, delay: 100 }}
+			>
+				<div className='f1' />
+			</TweenProvider>
+			<TweenProvider
+				defaultStyle={{ y: 1000 }}
+				tweenStyle={tweenStyle}
+				options={{ duration: 1200, delay: 200 }}
+			>
+				<div className='ground'>
+					<div>
+						{[...new Array(10).keys()].map((e, index) => (
+							<TweenProvider
+								key={e}
+								defaultStyle={{ y: 1000 }}
+								tweenStyle={tweenStyle}
+								options={{ duration: 500, delay: 30 * index }}
+							>
+								<div />
+							</TweenProvider>
+						))}
+					</div>
+				</div>
+			</TweenProvider>
+			<div className='profile'>
+				<div className='characteristic'>{characteristic}</div>
+				<div className='name' />
+				<div className='hashtag'>
+					{hashtag.map((hash) => (
+						<span key={hash}>{`#${hash}`}</span>
+					))}
+				</div>
+				<div className='percentage' />
 			</div>
 		</div>
-		<div className='profile'>
-			<div className='characteristic'>{characteristic}</div>
-			<div className='name' />
-			<div className='hashtag'>
-				{hashtag.map((hash) => (
-					<span key={hash}>{`#${hash}`}</span>
-				))}
-			</div>
-			<div className='percentage' />
-		</div>
-	</div>
-));
+	);
+});

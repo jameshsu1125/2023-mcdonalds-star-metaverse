@@ -6,7 +6,7 @@ const UserName = memo(({ userName }) => {
 	return (
 		<div className='UserName'>
 			在另一個宇宙的
-			<span className='m-2 text-3xl'>{userName}</span>
+			<span className='m-2 text-3xl'>{userName === '' ? '你' : userName}</span>
 		</div>
 	);
 });

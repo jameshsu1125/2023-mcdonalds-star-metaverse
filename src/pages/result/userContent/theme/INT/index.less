@@ -10,16 +10,6 @@
 		position: absolute;
 	}
 
-	.temp {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		// background-image: url('./img/temp.png');
-		background-position: center top;
-		background-size: 100%;
-		opacity: 0.5;
-	}
-
 	.ground {
 		bottom: 0;
 		width: 100%;
@@ -271,6 +261,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation: swing_r8 10s ease-in-out infinite;
 
 		@img: './img/s0.png';
 	}
@@ -282,6 +273,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation: circle_r8 10s ease-in-out infinite reverse;
 
 		@img: './img/s1.png';
 	}

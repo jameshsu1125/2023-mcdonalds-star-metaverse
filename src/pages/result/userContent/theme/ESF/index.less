@@ -137,6 +137,7 @@
 				width: image-width(@img) * @scale;
 				height: image-height(@img) * @scale;
 				background-image: url(@img);
+				animation: circle_r8 5s linear infinite reverse;
 
 				@img: './img/f8.png';
 			}
@@ -238,6 +239,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation: swing_r8 7s ease-in-out infinite;
 
 		@scale: 0.7;
 		@img: './img/s0.png';

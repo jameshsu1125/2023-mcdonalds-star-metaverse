@@ -128,12 +128,11 @@
 
 				@apply flex items-center justify-center;
 
-				& > div {
+				.module-border-wrap {
 					position: relative;
+					padding: 1rem;
 					padding: 4px;
-					width: auto;
 					height: 100%;
-					background: rgb(21, 15, 70);
 					background: linear-gradient(
 						132deg,
 						rgba(21, 15, 70, 1) 0%,
@@ -143,13 +142,12 @@
 					);
 					@apply rounded-2xl;
 
-					& > div {
+					.module {
 						position: relative;
 						overflow: hidden;
-						width: auto;
 						height: 100%;
 
-						@apply rounded-xl;
+						@apply flex justify-center rounded-xl;
 
 						& > img {
 							width: auto;

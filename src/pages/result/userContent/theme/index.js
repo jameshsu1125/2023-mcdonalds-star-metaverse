@@ -12,7 +12,9 @@ const Themes = memo(({ data, state }) => {
 					{Description && <Description personality={personality} />}
 				</div>
 			</div>
-			<div className='symbols'>{Symbol !== '' && <Symbol productName={productName} />}</div>
+			<div className='symbols'>
+				{Symbol !== '' && <Symbol productName={productName} state={state} />}
+			</div>
 		</div>
 	);
 });

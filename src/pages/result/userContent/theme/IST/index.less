@@ -11,16 +11,6 @@
 		background-size: 100%;
 	}
 
-	.temp {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		// background-image: url('./img/temp.png');
-		background-position: center top;
-		background-size: 100%;
-		opacity: 0.5;
-	}
-
 	.f0 {
 		top: 57px;
 		left: 17px;
@@ -137,6 +127,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation: Blank 2s ease-in-out infinite;
 
 		@img: './img/s0.png';
 	}
@@ -148,6 +139,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation: Blank 1.5s ease-in-out infinite;
 
 		@scale: 0.75;
 		@img: './img/s1.png';
@@ -160,6 +152,7 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation: Blank 2.2s ease-in-out infinite;
 
 		@scale: 0.75;
 		@img: './img/s2.png';

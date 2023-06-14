@@ -1,4 +1,5 @@
 import Click from 'lesca-click';
+import Landscape from 'lesca-react-landscape';
 import { lazy, memo, Suspense, useContext, useMemo, useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
 import LoadingProcess from '../components/loadingProcess';
@@ -39,6 +40,7 @@ const App = () => {
 				{state[ACTION.LoadingProcess].enabled && <LoadingProcess />}
 				{state[ACTION.modal].enabled && <Modal />}
 			</Context.Provider>
+			<Landscape style={{ backgroundColor: '#d9447e' }} />
 		</div>
 	);
 };

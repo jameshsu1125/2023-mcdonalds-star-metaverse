@@ -182,6 +182,10 @@
 
 	& > div:not(.productName) {
 		position: absolute;
+		background-size: 100%;
+		animation-name: swing_r8;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
 	}
 
 	& > div:nth-child(1) {
@@ -190,7 +194,6 @@
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
-		background-size: 100%;
 
 		@scale: 0.77;
 		@img: './img/star1.png';
@@ -202,7 +205,9 @@
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
-		background-size: 100%;
+		animation-duration: 10s;
+		animation-delay: -5s;
+		animation-direction: reverse;
 
 		@scale: 0.77;
 		@img: './img/star2.png';
@@ -214,7 +219,9 @@
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
-		background-size: 100%;
+		animation-duration: 10s;
+		animation-delay: -2s;
+		animation-direction: normal;
 
 		@scale: 0.77;
 		@img: './img/star4.png';
@@ -239,6 +246,9 @@
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		animation-duration: 8s;
+		animation-delay: -3s;
+		animation-direction: reverse;
 
 		@scale: 0.7;
 		@img: './img/star6.png';

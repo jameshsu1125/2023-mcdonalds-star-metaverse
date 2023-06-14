@@ -31,7 +31,7 @@ export const ENT = memo(({ hashtag, characteristic, state }) => {
 	const [sunTween, setSunTween] = useState();
 	const [workerTween, setWorkerTween] = useState();
 	useEffect(() => {
-		if (steps === 2) {
+		if (steps === 1) {
 			setSunTween({ opacity: 1, y: 0 });
 			setWorkerTween({ y: 0 });
 		}

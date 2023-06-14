@@ -1,5 +1,7 @@
 import OnloadProvider from 'lesca-react-onload';
-import { memo, useState } from 'react';
+import { memo, useContext, useEffect, useState } from 'react';
+import { Context } from '../../settings/config';
+import { ACTION } from '../../settings/constant';
 import 地毯 from './carpet';
 import 彩球 from './coloredBalls';
 import { LandingContext, LandingState, LandingSteps } from './config';
@@ -13,14 +15,20 @@ import 聚光燈 from './spotlight';
 import 星星們 from './symbols';
 
 const Landing = memo(() => {
+	const [, setContext] = useContext(Context);
 	const value = useState(LandingState);
-	const [, setContext] = value;
+	const [, setState] = value;
+
+	useEffect(() => {
+		setContext({ type: ACTION.LoadingProcess, state: { enabled: true } });
+	}, []);
 
 	return (
 		<LandingContext.Provider value={value}>
 			<OnloadProvider
 				onload={() => {
-					setContext((S) => ({ ...S, steps: LandingSteps.fadeIn }));
+					setState((S) => ({ ...S, steps: LandingSteps.fadeIn }));
+					setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
 				}}
 			>
 				<div className='Landing'>

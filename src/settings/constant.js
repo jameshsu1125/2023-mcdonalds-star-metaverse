@@ -25,7 +25,7 @@ export const LOADING_PROCESS_TYPE = {
 export const LOADING_PROCESS_STATE = {
 	enabled: false,
 	type: LOADING_PROCESS_TYPE.bubbles,
-	body: '',
+	body: '讀取中',
 };
 
 export const IDs = {
@@ -41,7 +41,7 @@ export const IDs = {
 
 export const RESULT_STATE = {
 	userName: '誰誰誰誰誰誰誰誰誰',
-	id: IDs['2ENF'],
+	id: IDs['8INF'],
 };
 
 export const MODAL_STATE = {
