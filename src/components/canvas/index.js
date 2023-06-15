@@ -73,6 +73,8 @@ const Canvas = memo(() => {
 				url = IST;
 				break;
 			case IDs['8INF']:
+				url = INF;
+				break;
 			default:
 				url = INF;
 		}

@@ -59,7 +59,7 @@
 
 	@keyframes elastic {
 		0% {
-			transform: translateY(-500px);
+			transform: translateY(-800px);
 		}
 		32.87% {
 			transform: translateY(120.83px);
@@ -104,6 +104,7 @@
 		& > div:nth-child(2) {
 			top: -230px;
 			left: 290px;
+			display: none;
 			width: image-width(@img) * @scale;
 			height: image-height(@img) * @scale;
 			background-image: url(@img);
@@ -115,6 +116,7 @@
 		& > div:nth-child(3) {
 			top: -113px;
 			left: -362px;
+			display: none;
 			width: image-width(@img) * @scale;
 			height: image-height(@img) * @scale;
 			background-image: url(@img);

@@ -16,7 +16,7 @@
 		background-image: url(@img);
 		background-size: 100%;
 
-		@scale: 0.9;
+		@scale: 1;
 		@img: './img/button-border.png';
 	}
 
@@ -29,7 +29,7 @@
 		background-size: 100%;
 		opacity: 0;
 
-		@scale: 0.9;
+		@scale: 1;
 		@img: './img/button-border.png';
 
 		.spotlight-star {
@@ -63,7 +63,7 @@
 				pointer-events: none;
 			}
 
-			@apply flex flex-row items-center justify-center text-2xl font-bold tracking-widest text-primary;
+			@apply flex flex-row items-center justify-center text-3xl font-bold tracking-widest text-primary;
 
 			&:hover {
 				background-position-y: 100%;
@@ -82,6 +82,6 @@
 
 @media only screen and (max-width: @SM) {
 	.Spotlight {
-		top: 65%;
+		top: 62%;
 	}
 }

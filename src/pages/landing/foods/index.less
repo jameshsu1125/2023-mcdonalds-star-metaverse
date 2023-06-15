@@ -1,6 +1,8 @@
+@import url('../../../settings/config.less');
+
 .Foods {
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	left: 50%;
 	z-index: 2;
 	pointer-events: none;
@@ -98,8 +100,8 @@
 
 	.coke-1 {
 		position: absolute;
-		top: -73px;
-		left: -339px;
+		top: -43px;
+		left: -365px;
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
@@ -135,5 +137,11 @@
 
 	.reverse {
 		animation-direction: reverse;
+	}
+}
+
+@media only screen and (max-width: @MD) {
+	.Foods {
+		top: 55%;
 	}
 }

@@ -7,6 +7,7 @@ const StarLeftBottom = ({ steps }) => {
 	useEffect(() => {
 		if (steps === LandingSteps.fadeIned) {
 			setTimeout(() => {
+				ref.current.style.display = 'block';
 				ref.current?.classList.add('elasticObject');
 			}, 400);
 			setTimeout(() => {
@@ -24,6 +25,7 @@ const StarLeftTop = ({ steps }) => {
 	useEffect(() => {
 		if (steps === LandingSteps.fadeIned) {
 			setTimeout(() => {
+				ref.current.style.display = 'block';
 				ref.current?.classList.add('elasticObject');
 			}, 300);
 
@@ -40,6 +42,7 @@ const StarRight = ({ steps }) => {
 	const ref = useRef();
 	useEffect(() => {
 		if (steps === LandingSteps.fadeIned) {
+			ref.current.style.display = 'block';
 			ref.current?.classList.add('elasticObject');
 			setTimeout(() => {
 				ref.current?.classList.remove('elasticObject');
