@@ -1,3 +1,5 @@
+import QueryString from 'lesca-url-parameters';
+
 export const ACTION = {
 	page: '頁面',
 	LoadingProcess: '讀取產生中',
@@ -39,9 +41,12 @@ export const IDs = {
 	'8INF': 'INF',
 };
 
+const dataFromQS = Object.entries(IDs).filter((item) => item[1] === QueryString.get('id'));
+const idFromQS = dataFromQS.length > 0 ? dataFromQS[0][1] : IDs['1ENT'];
+
 export const RESULT_STATE = {
 	userName: '誰誰誰誰誰誰誰誰誰',
-	id: IDs['8INF'],
+	id: idFromQS,
 };
 
 export const MODAL_STATE = {

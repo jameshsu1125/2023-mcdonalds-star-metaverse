@@ -4,6 +4,10 @@
 
 @import url('./animate.less');
 @import url('./fonts/heavy/stylesheet.css');
+@import url('./fonts/bold/stylesheet.css');
+@import url('./fonts/medium/stylesheet.css');
+@import url('./fonts/regular/stylesheet.css');
+@import url('./fonts/book/stylesheet.css');
 @import './config.less';
 
 body {
@@ -17,6 +21,7 @@ body {
 
 @layer components {
 	.App {
+		min-width: 768px;
 		min-height: @minHeight;
 
 		user-select: none;

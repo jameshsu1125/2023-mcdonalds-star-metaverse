@@ -42,18 +42,19 @@
 
 		.name {
 			width: 100%;
+			color: #f3b03d;
 			text-align: center;
-			@apply flex flex-row items-center justify-center py-1 font-heavyTC text-xl font-black tracking-widest text-secondary;
+			@apply flex flex-row items-center justify-center py-1 font-boldTC text-xl tracking-widest;
 
 			.capitalize {
-				margin: 0 2px 0 1px;
-				margin-top: -1px;
+				margin: 0 3px 0 2px;
+				margin-top: 0.5px;
 				width: image-width(@img) * @scale;
 				height: image-height(@img) * @scale;
 				background-image: url(@img);
 				background-size: 100%;
 
-				@scale: 0.78;
+				@scale: 0.79;
 				@img: './img/capitalize.svg';
 			}
 		}
@@ -66,7 +67,7 @@
 				width: 86%;
 				background-color: #000;
 				text-align: center;
-				@apply rounded-t-lg font-mediumTC text-base font-medium;
+				@apply rounded-t-lg font-mediumTC text-base;
 			}
 		}
 	}

@@ -1,10 +1,11 @@
+import QueryString from 'lesca-url-parameters';
 import { createContext } from 'react';
 import { ACTION, LOADING_PROCESS_STATE, MODAL_STATE, PAGE, RESULT_STATE } from './constant';
 
 export const Context = createContext();
 
 export const initialState = {
-	[ACTION.page]: PAGE.landing,
+	[ACTION.page]: QueryString.get('id') ? PAGE.result : PAGE.landing,
 	[ACTION.LoadingProcess]: LOADING_PROCESS_STATE,
 	[ACTION.result]: RESULT_STATE,
 	[ACTION.modal]: MODAL_STATE,
