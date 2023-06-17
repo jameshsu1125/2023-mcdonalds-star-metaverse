@@ -31,7 +31,7 @@ const Question = memo(() => {
 				}}
 			>
 				<div className='Result'>
-					<Container>
+					<Container steps={steps}>
 						<UserContent />
 						<Product />
 						<Footer />

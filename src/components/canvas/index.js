@@ -33,11 +33,13 @@ const Canvas = memo(() => {
 			const ctx = ref.current.getContext('2d');
 			ctx.drawImage(size.target, 0, 0);
 
-			ctx.font = '38px Microsoft JhengHei, 微軟正黑體, PingFang, LiHei Pro, 黑體-繁, sans-serif';
+			ctx.font =
+				'bold 38px Microsoft JhengHei, 微軟正黑體, PingFang, LiHei Pro, 黑體-繁, sans-serif';
 			ctx.fillStyle = '#fff';
-			ctx.fillText(userName, 382, 213);
+			const currentName = userName === '' ? '你' : userName;
+			ctx.fillText(currentName, 382, 213);
 
-			const split = userName.split('');
+			const split = currentName.split('');
 			const offset = split
 				.map((s, i) => (userName.charCodeAt(i) >= 0 && userName.charCodeAt(i) <= 128 ? 1 : 2))
 				.reduce((prev, current) => prev + current, 0);

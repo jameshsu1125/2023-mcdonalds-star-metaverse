@@ -85,3 +85,40 @@
 		top: 62%;
 	}
 }
+
+@media only screen and (max-height: 1000px) {
+	.Spotlight {
+		.penumbraShadow {
+			margin-left: 0 - image-width(@img) * @scale * 0.5;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 0.8;
+			@img: './img/button-border.png';
+		}
+
+		.penumbra {
+			margin-left: 0 - image-width(@img) * @scale * 0.5;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 0.8;
+			@img: './img/button-border.png';
+
+			.spotlight-star {
+				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+
+				@img: './img/spotlight-star.png';
+			}
+
+			& > .button {
+				margin-top: 0 - image-height(@img) * @scale * 0.5 * 0.5;
+				margin-left: 0 - image-width(@img) * @scale * 0.5;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale * 0.5;
+
+				@img: './img/button.png';
+			}
+		}
+	}
+}

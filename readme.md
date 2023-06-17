@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/jameshsu1125">
-    <img src="public/McDonalds_France_Logo_2003.png" alt="Logo" width=72 height=72>
+    <img src="public/img/logo.png" alt="Logo" width=72 height=72>
   </a>
   <h3 align="center">McDonald</h3>
   <p align="center">
