@@ -5,7 +5,9 @@ import { ACTION } from '../../settings/constant';
 import './index.less';
 
 const Background = () => <div className='loadingBG absolute top-0 h-full w-full' />;
-const Text = ({ children }) => <span className='text-textColor relative'>{children}</span>;
+const Text = ({ children }) => (
+	<span className='text-textColor relative text-lg tracking-widest'>{children}</span>
+);
 const LoadingProcess = memo(() => {
 	const [context] = useContext(Context);
 	const data = context[ACTION.LoadingProcess];
