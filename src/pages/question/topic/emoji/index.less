@@ -1,3 +1,5 @@
+@import url('../../../../settings/config.less');
+
 .Emoji {
 	width: 100%;
 	@apply mb-5 flex justify-center;
@@ -46,5 +48,17 @@
 
 	& > .q8 {
 		background-image: url('./img/q9.png');
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Emoji {
+		& > div {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 0.4;
+			@img: './img/q1.png';
+		}
 	}
 }

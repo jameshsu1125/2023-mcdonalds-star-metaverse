@@ -162,7 +162,7 @@
 		@apply flex flex-col items-start justify-start px-10 py-5;
 
 		.characteristic {
-			@apply text-4xl text-black;
+			@apply font-boldTC text-4xl font-bold text-black;
 		}
 
 		.name {
@@ -178,7 +178,7 @@
 
 		.hashtag {
 			margin-top: 64px;
-			@apply flex flex-col text-base text-black;
+			@apply flex flex-col font-regularTC text-base text-black;
 		}
 
 		.percentage {
@@ -198,6 +198,7 @@
 
 .ENTSymbols {
 	position: relative;
+	z-index: 3;
 	width: 100%;
 	height: 100%;
 
@@ -252,6 +253,22 @@
 		@img: './img/o2.png';
 	}
 
+	& > div:nth-child(4) {
+		top: 679px;
+		left: 559px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		animation-name: circle_r8;
+		animation-duration: 5s;
+		animation-delay: -5s;
+		animation-direction: normal;
+
+		@scale: 0.65;
+		@img: './img/o3.png';
+	}
+
 	.productName {
 		position: absolute;
 		top: 156px;
@@ -272,7 +289,7 @@
 			@img: '../img/flag.svg';
 		}
 
-		@apply rounded-r-xl py-1 pl-14 pr-4 text-2xl;
+		@apply rounded-r-xl py-1 pl-14 pr-4 font-boldTC text-2xl font-bold text-secondary;
 	}
 }
 
@@ -280,10 +297,10 @@
 	width: 100%;
 	height: 100%;
 
-	@apply flex flex-col items-center justify-center pb-6 text-lg tracking-wider;
+	@apply flex flex-col items-center justify-center pb-6 font-regularTC text-lg tracking-wider;
 	& > p:nth-child(4) {
 		color: #e7412f;
-		@apply underline decoration-secondary underline-offset-4;
+		@apply font-boldTC font-bold underline decoration-secondary underline-offset-4;
 	}
 }
 

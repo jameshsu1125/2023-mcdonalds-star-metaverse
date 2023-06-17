@@ -48,7 +48,7 @@ export const ResultNames = {
 		ID: IDs['3ESF'],
 		characteristic: '連路人都被秒圈粉',
 		productName: '麥克鷄塊',
-		useWith: ['麥脆鷄腿', '中杯汽水'],
+		useWith: ['六塊麥克鷄塊', '中杯汽水'],
 		describe:
 			'這世界上沒有人不愛麥克鷄塊！嚴選健康優質鷄肉， 調配鷄胸和鷄腿黃金比例，創造外酥內嫩的星級美味，再暢飲冰冰涼涼的可樂～～～讓人快樂升天的好滋味只要89元！',
 	},
@@ -107,13 +107,13 @@ export const ResultNames = {
 export const ResultContentsList = [
 	{
 		...ResultNames.職場星天王,
-		hashtag: ['人氣炸子雞', '抱歉偶爾kiang'],
+		hashtag: ['不自由毋寧死', '衝啊哪次不衝'],
 		personality: [
-			'善於表達自己的你',
-			'是兼具熱情與熱心的Hot Bae',
-			'有時活力多到滿出來',
-			'常讓全場chill嗨嗨，就像麥脆鷄腿般受歡迎',
-			'是朋友圈內的人氣炸子雞！',
+			'平常看似慵懶的你，認真起來嚇死人！',
+			'做事速度極快，他爬樓梯你搭電梯',
+			'根本就是效率猛獸！',
+			'無論軟硬實力都像麥克雙牛堡般豐厚',
+			'深受工作夥伴喜愛！',
 		],
 		motto: [
 			'買啦哪次不買！吃啦哪次不吃！',
@@ -213,7 +213,7 @@ export const ResultContentsList = [
 		],
 		motto: ['沒有什麼事情是吃東西沒辦法解決的', '笑死', '好讚好喜歡', '是在跟我開玩笑嗎？'],
 		buddies: [ResultNames.話題星天才, ResultNames.科技星貴],
-		troll: ['與他們相處時，你能放心做自己', '而他們也能包容你', '偶爾撿到槍的壞嘴巴！'],
+		troll: ['與他們相處時', '你能放心做自己', '而他們也能包容你', '偶爾撿到槍的壞嘴巴！'],
 		Theme: EST,
 		Symbol: ESTSymbol,
 		Description: ESTDescription,

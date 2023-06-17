@@ -36,7 +36,7 @@ export const IDs = {
 	'5EST': 'EST',
 	'6ISF': 'ISF',
 	'7IST': 'IST',
-	'8INF': 'INF ',
+	'8INF': 'INF',
 };
 
 export const RESULT_STATE = {

@@ -3,7 +3,7 @@ import { memo, useContext, useEffect, useMemo, useRef } from 'react';
 import { QuestionContext, QuestionList, QuestionSteps } from '../../config';
 import './index.less';
 
-const DELAY = 2500;
+const DELAY = 1600;
 
 const Ico = ({ emoji, steps }) => {
 	const ref = useRef();

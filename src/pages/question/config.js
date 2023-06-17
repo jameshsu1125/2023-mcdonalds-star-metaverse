@@ -78,7 +78,7 @@ export const QuestionList = [
 		emoji: 'q8',
 	},
 	{
-		question: ['測驗結束，請輸入你的名字'],
+		question: ['測驗結束，請輸入你的暱稱'],
 		answers: [{ type: 'input', text: '請輸入1-8個字暱稱' }],
 	},
 ];

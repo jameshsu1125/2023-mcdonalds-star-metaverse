@@ -6,7 +6,7 @@
 	@scale: 0.71;
 	@img: './img/2.png';
 
-	& > div {
+	& > div:not(.optional) {
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -27,6 +27,19 @@
 		}
 	}
 
+	.optional {
+		position: absolute;
+		top: 8px;
+		width: 100%;
+		@apply flex justify-center font-regularTC text-sm;
+
+		&::after {
+			border: solid 1px #fff;
+			content: '可選擇';
+			@apply rounded-l-full rounded-r-full px-2;
+		}
+	}
+
 	.CI_ENT {
 		.image {
 			background-image: url('./img/0.png');
@@ -34,7 +47,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply text-3xl;
+			@apply font-boldTC text-3xl font-bold;
 		}
 	}
 
@@ -45,7 +58,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply text-3xl;
+			@apply font-boldTC text-3xl font-bold;
 		}
 	}
 
@@ -56,7 +69,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply text-3xl;
+			@apply font-boldTC text-3xl font-bold;
 		}
 	}
 
@@ -67,7 +80,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply text-3xl;
+			@apply font-boldTC text-3xl font-bold;
 		}
 	}
 
@@ -78,7 +91,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply text-3xl;
+			@apply font-boldTC text-3xl font-bold;
 		}
 	}
 
@@ -89,7 +102,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply flex flex-row items-center justify-center text-3xl;
+			@apply flex flex-row items-center justify-center font-boldTC text-3xl font-bold;
 
 			& > div:nth-child(3) {
 				text-indent: -14px;
@@ -113,7 +126,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply flex flex-row items-center justify-center text-3xl;
+			@apply flex flex-row items-center justify-center font-boldTC text-3xl font-bold;
 
 			& > div {
 				@apply m-6;
@@ -136,7 +149,7 @@
 		.subtitle {
 			width: 100%;
 
-			@apply flex flex-row items-center justify-center text-3xl;
+			@apply flex flex-row items-center justify-center font-boldTC text-3xl font-bold;
 
 			& > div:nth-child(3) {
 				line-height: 22px;

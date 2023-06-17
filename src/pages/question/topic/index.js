@@ -14,7 +14,6 @@ const Topic = memo(() => {
 
 	return (
 		<div className='Topic'>
-			<div className='temp' />
 			<Steps />
 			<Slider steps={steps} />
 			<Heading steps={steps} />

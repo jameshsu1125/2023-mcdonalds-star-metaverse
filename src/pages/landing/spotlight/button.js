@@ -16,7 +16,7 @@ const LandingButton = memo(({ steps, setLandingState }) => {
 			setStyle(
 				{ opacity: 1, scale: 1, y: 0 },
 				{
-					delay: 1200,
+					delay: 0,
 					duration: 500,
 					onComplete: () => {
 						setLandingState((S) => ({ ...S, steps: LandingSteps.buttonFadeIned }));

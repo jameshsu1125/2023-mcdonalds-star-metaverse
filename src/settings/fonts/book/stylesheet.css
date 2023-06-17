@@ -1,0 +1,10 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Book';
+    src: url('subset-MXiangHeHeiTC-Book.woff2') format('woff2'),
+        url('subset-MXiangHeHeiTC-Book.woff') format('woff');
+
+    font-display: swap;
+}
+

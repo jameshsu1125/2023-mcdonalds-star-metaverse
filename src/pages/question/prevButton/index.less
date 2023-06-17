@@ -1,23 +1,24 @@
 @import url('../../../settings/config.less');
 
 .QuestionPrevButton {
+	display: none;
 	transition: 0.1s;
 
-	@apply text-2xl text-primary;
+	@apply font-heavyTC text-2xl text-primary;
 
 	&:hover {
-		@apply scale-105 text-black;
+		@apply scale-105 text-secondary;
 	}
 }
 
 @media only screen and (max-width: @SM) {
 	.QuestionPrevButton {
 		transition: none;
-		&:hover {
-			@apply scale-100 text-primary;
-		}
+		// &:hover {
+		// 	@apply scale-100 text-secondary;
+		// }
 		&:active {
-			@apply scale-105 text-black;
+			@apply scale-105 text-white;
 		}
 	}
 }

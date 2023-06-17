@@ -11,7 +11,7 @@ const Penumbra = ({ steps, setLandingState }) => {
 			setStyle(
 				{ opacity: 1 },
 				{
-					delay: 2000,
+					delay: 1400,
 					onComplete: () => {
 						setLandingState((S) => ({ ...S, steps: LandingSteps.fadeIned }));
 					},
@@ -28,7 +28,7 @@ const Spotlight = ({ steps, setLandingState }) => {
 		if (steps === LandingSteps.fadeIn) {
 			setTimeout(() => {
 				ref.current?.classList.add('blank');
-			}, 2000);
+			}, 1400);
 		}
 	}, [steps]);
 	return (

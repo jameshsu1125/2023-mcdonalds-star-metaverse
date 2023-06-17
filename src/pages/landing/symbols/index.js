@@ -5,16 +5,16 @@ import './index.less';
 const StarLeftBottom = ({ steps }) => {
 	const ref = useRef();
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIned) {
+		if (steps === LandingSteps.fadeIn) {
 			setTimeout(() => {
 				ref.current.style.display = 'block';
 				ref.current?.classList.add('elasticObject');
-			}, 400);
+			}, 1600);
 			setTimeout(() => {
 				ref.current?.classList.remove('elasticObject');
 				ref.current?.classList.add('swing_star');
 				ref.current.classList.add('reverse');
-			}, 400 + 700);
+			}, 1600 + 700);
 		}
 	}, [steps]);
 	return <div ref={ref} />;
@@ -23,16 +23,16 @@ const StarLeftBottom = ({ steps }) => {
 const StarLeftTop = ({ steps }) => {
 	const ref = useRef();
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIned) {
+		if (steps === LandingSteps.fadeIn) {
 			setTimeout(() => {
 				ref.current.style.display = 'block';
 				ref.current?.classList.add('elasticObject');
-			}, 300);
+			}, 1500);
 
 			setTimeout(() => {
 				ref.current?.classList.remove('elasticObject');
 				ref.current?.classList.add('swing_star');
-			}, 300 + 700);
+			}, 1500 + 700);
 		}
 	}, [steps]);
 	return <div ref={ref} />;
@@ -41,13 +41,15 @@ const StarLeftTop = ({ steps }) => {
 const StarRight = ({ steps }) => {
 	const ref = useRef();
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIned) {
-			ref.current.style.display = 'block';
-			ref.current?.classList.add('elasticObject');
+		if (steps === LandingSteps.fadeIn) {
+			setTimeout(() => {
+				ref.current.style.display = 'block';
+				ref.current?.classList.add('elasticObject');
+			}, 1400);
 			setTimeout(() => {
 				ref.current?.classList.remove('elasticObject');
 				ref.current?.classList.add('swing_star');
-			}, 700);
+			}, 1400 + 700);
 		}
 	}, [steps]);
 	return <div ref={ref} />;

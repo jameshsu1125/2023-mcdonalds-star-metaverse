@@ -4,7 +4,7 @@ import { memo, useCallback, useContext, useEffect, useId, useMemo, useRef } from
 import { QuestionContext, QuestionDirect, QuestionList, QuestionSteps } from '../../config';
 import './index.less';
 
-const DELAY = 2500;
+const DELAY = 1700;
 
 const Label = ({ label }) => <span>{label}</span>;
 const Button = memo(({ label, type, index, gtm }) => {

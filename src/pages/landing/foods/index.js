@@ -4,7 +4,7 @@ import { LandingContext, LandingSteps } from '../config';
 import './index.less';
 
 const OFFSET_DELAY = 500;
-const random = () => 1200 + Math.random() * OFFSET_DELAY;
+const random = () => 0 + Math.random() * OFFSET_DELAY;
 
 const Coke1 = ({ steps }) => {
 	const ref = useRef();

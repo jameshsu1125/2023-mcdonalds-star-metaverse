@@ -16,10 +16,10 @@ const ENT = ({ productName }) => (
 	</div>
 );
 
-const ESF = ({ productName }) => (
+const ESF = () => (
 	<div className='CI_ESF'>
 		<div className='image' />
-		<div className='subtitle'>{productName}</div>
+		<div className='subtitle'>六塊麥克鷄塊</div>
 	</div>
 );
 
@@ -98,6 +98,19 @@ const CommercialImage = memo(({ data }) => {
 				return '';
 		}
 	}, [data]);
-	return <div className='CommercialImage'>{Product}</div>;
+
+	const optional = useMemo(() => {
+		if (data.ID === ResultNames.星靈嚮導.ID) return <div className='optional' />;
+		if (data.ID === ResultNames.科技星貴.ID) return <div className='optional' />;
+		if (data.ID === ResultNames.話題星天才.ID) return <div className='optional' />;
+		return '';
+	}, [data.ID]);
+
+	return (
+		<div className='CommercialImage'>
+			{Product}
+			{optional}
+		</div>
+	);
 });
 export default CommercialImage;

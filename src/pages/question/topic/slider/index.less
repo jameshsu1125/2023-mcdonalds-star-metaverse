@@ -1,3 +1,5 @@
+@import url('../../../../settings/config.less');
+
 .Slider {
 	position: relative;
 	width: 100%;
@@ -35,6 +37,26 @@
 					@img: './img/smile.jpg';
 
 					@apply rounded-full;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Slider {
+		.process {
+			width: 70%;
+			.bar {
+				& > div {
+					& > div {
+						margin-top: 0 - image-height(@img) * @scale * 0.5;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+
+						@scale: 0.6;
+						@img: './img/smile.jpg';
+					}
 				}
 			}
 		}

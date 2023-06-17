@@ -1,0 +1,10 @@
+@font-face {
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Medium';
+    src: url('subset-MXiangHeHeiTC-Medium.woff2') format('woff2'),
+        url('subset-MXiangHeHeiTC-Medium.woff') format('woff');
+
+    font-display: swap;
+}
+

@@ -8,10 +8,13 @@
 	& > .button {
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale * 0.5;
+		color: #00002c;
 		cursor: pointer;
 
 		@scale: 0.58;
 		@img: './img/btn.png';
+
+		@apply font-boldTC font-bold;
 
 		&:hover {
 			& > div {
@@ -44,6 +47,12 @@
 @media only screen and (max-width: @SM) {
 	.ButtonGroup {
 		& > .button {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale * 0.5;
+
+			@scale: 0.65;
+			@img: './img/btn.png';
+
 			&:hover {
 				& > div {
 					background-position-y: 0%;
@@ -56,6 +65,10 @@
 					background-position-y: 100%;
 					@apply text-secondary;
 				}
+			}
+
+			& > div {
+				@apply text-3xl;
 			}
 		}
 	}

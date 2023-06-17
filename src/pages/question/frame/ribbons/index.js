@@ -8,11 +8,25 @@ const DROP_RIBBONS_NUMBER = 5;
 const Ribbons = memo(() => {
 	const ref = useRef();
 	const intervalRef = useRef();
+
 	useEffect(() => {
 		const createRibbon = () => new Rain({ container: ref.current, count: DROP_RIBBONS_NUMBER });
 		createRibbon();
 		intervalRef.current = setInterval(createRibbon, DROP_RIBBONS_TIME);
-		return () => clearInterval(intervalRef.current);
+
+		const blur = () => clearInterval(intervalRef.current);
+		const focus = () => {
+			clearInterval(intervalRef.current);
+			intervalRef.current = setInterval(createRibbon, DROP_RIBBONS_TIME);
+		};
+		window.addEventListener('blur', blur);
+		window.addEventListener('focus', focus);
+
+		return () => {
+			clearInterval(intervalRef.current);
+			window.removeEventListener('blur', blur);
+			window.removeEventListener('focus', focus);
+		};
 	}, []);
 
 	return <div ref={ref} className='Ribbons' />;

@@ -6,6 +6,8 @@ import { Context } from '../../../../settings/config';
 import { ACTION, PAGE } from '../../../../settings/constant';
 import './index.less';
 
+let timeout;
+
 const DownloadButton = memo(() => {
 	const id = useId();
 	const [context, setContext] = useContext(Context);
@@ -32,6 +34,10 @@ const DownloadButton = memo(() => {
 			eventCategory: 'engagement',
 			eventLabel: '下載圖片',
 		});
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			alert('下載成功！立即拿起手機開啟 Instagram Story 分享專屬你的測驗結果吧！');
+		}, 2000);
 	};
 
 	useEffect(() => {
@@ -61,7 +67,7 @@ const AgainButton = memo(() => {
 	useEffect(() => {
 		Click.add(`#${id}`, () => {
 			Click.remove(`#${id}`);
-			setContext({ type: ACTION.page, state: PAGE.question });
+			setContext({ type: ACTION.page, state: PAGE.landing });
 			window.dataLayer?.push({
 				event: 'click_btn',
 				eventCategory: 'engagement',

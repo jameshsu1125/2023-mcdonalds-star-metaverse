@@ -3,7 +3,7 @@ import { memo, useContext, useEffect } from 'react';
 import { QuestionContext, QuestionSteps } from '../../config';
 import './index.less';
 
-const DELAY = 1000;
+const DELAY = 400;
 const Smile = ({ steps }) => {
 	const [state] = useContext(QuestionContext);
 	const { index } = state;

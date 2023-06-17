@@ -22,7 +22,11 @@ const UserContent = memo(() => {
 
 	return (
 		<div className='UserContent'>
-			{/* <div className='temp' /> */}
+			<div className='gradients'>
+				{[...new Array(3).keys()].map((key) => (
+					<div key={key} />
+				))}
+			</div>
 			<div className='onePlusOne'>
 				<div />
 			</div>

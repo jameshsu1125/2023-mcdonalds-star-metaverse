@@ -4,7 +4,7 @@ import { TweenProvider } from 'lesca-use-tween';
 
 export const ESTSymbol = memo(({ productName }) => (
 	<div className='ESTSymbols'>
-		{[...new Array(3).keys()].map((e) => (
+		{[...new Array(4).keys()].map((e) => (
 			<div key={`s${e}`} />
 		))}
 		<div className='productName'>{productName}</div>

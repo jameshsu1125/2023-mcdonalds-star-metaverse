@@ -3,7 +3,7 @@ import { memo, useContext, useEffect, useRef } from 'react';
 import { QuestionContext, QuestionList, QuestionSteps } from '../../config';
 import './index.less';
 
-const DELAY = 800;
+const DELAY = 200;
 
 const TenDigit = ({ index, steps }) => {
 	const ref = useRef();

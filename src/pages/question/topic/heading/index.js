@@ -3,7 +3,7 @@ import { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { QuestionContext, QuestionList, QuestionSteps } from '../../config';
 import './index.less';
 
-const DELAY = 2000;
+const DELAY = 1200;
 
 const Heading = memo(({ steps }) => {
 	const [context] = useContext(QuestionContext);

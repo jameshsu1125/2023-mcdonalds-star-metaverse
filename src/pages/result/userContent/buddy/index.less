@@ -43,19 +43,18 @@
 		.name {
 			width: 100%;
 			text-align: center;
-			@apply flex flex-row items-center justify-center py-1 text-xl tracking-widest text-secondary;
+			@apply flex flex-row items-center justify-center py-1 font-heavyTC text-xl font-black tracking-widest text-secondary;
 
 			.capitalize {
-				margin-top: -3px;
+				margin: 0 2px 0 1px;
+				margin-top: -1px;
 				width: image-width(@img) * @scale;
 				height: image-height(@img) * @scale;
 				background-image: url(@img);
 				background-size: 100%;
 
-				@scale: 0.8;
+				@scale: 0.78;
 				@img: './img/capitalize.svg';
-
-				@apply mx-1;
 			}
 		}
 
@@ -67,7 +66,7 @@
 				width: 86%;
 				background-color: #000;
 				text-align: center;
-				@apply rounded-t-lg text-base;
+				@apply rounded-t-lg font-mediumTC text-base font-medium;
 			}
 		}
 	}
@@ -100,12 +99,13 @@
 				@img: './img/heart.svg';
 			}
 		}
+
 		.body {
 			margin-top: 23px;
 			width: 100%;
 			text-align: center;
 
-			@apply tracking-widest;
+			@apply font-regularTC tracking-widest;
 		}
 	}
 }

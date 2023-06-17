@@ -1,3 +1,5 @@
+@import url('../../../../settings/config.less');
+
 .Steps {
 	width: 100%;
 
@@ -30,5 +32,25 @@
 		background-size: 100%;
 
 		@img: './img/singleDigit.png';
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Steps {
+		@scale: 0.55;
+
+		.ten {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale * 0.5;
+
+			@img: './img/tensDigit.png';
+		}
+
+		.single {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale * 0.1;
+
+			@img: './img/singleDigit.png';
+		}
 	}
 }

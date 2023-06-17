@@ -18,6 +18,13 @@ module.exports = {
 			background: '#030e3b',
 			color: '#fff',
 		},
+		fontFamily: {
+			heavyTC: ['Heavy', 'Microsoft JhengHei', 'PingFang', 'sans-serif'],
+			mediumTC: ['Medium', 'Microsoft JhengHei', 'PingFang', 'sans-serif'],
+			regularTC: ['Regular', 'Microsoft JhengHei', 'PingFang', 'sans-serif'],
+			boldTC: ['Bold', 'Microsoft JhengHei', 'PingFang', 'sans-serif'],
+			bookTC: ['Book', 'Microsoft JhengHei', 'PingFang', 'sans-serif'],
+		},
 	},
 	plugins: [],
 };

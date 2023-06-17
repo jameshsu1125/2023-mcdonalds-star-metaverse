@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import url('./animate.less');
+@import url('./fonts/heavy/stylesheet.css');
+@import './config.less';
 
 body {
 	margin: 0;
@@ -15,6 +17,8 @@ body {
 
 @layer components {
 	.App {
+		min-height: @minHeight;
+
 		user-select: none;
 		@apply absolute h-full w-full overflow-hidden;
 		* {

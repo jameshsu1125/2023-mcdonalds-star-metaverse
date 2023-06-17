@@ -1,0 +1,10 @@
+@font-face {
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Bold';
+    src: url('subset-MXiangHeHeiTC-Bold.woff2') format('woff2'),
+        url('subset-MXiangHeHeiTC-Bold.woff') format('woff');
+
+    font-display: swap;
+}
+

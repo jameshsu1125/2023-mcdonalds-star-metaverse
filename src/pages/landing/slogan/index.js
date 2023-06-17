@@ -3,17 +3,19 @@ import { memo, useContext, useEffect, useRef } from 'react';
 import { LandingContext, LandingSteps } from '../config';
 import './index.less';
 
+const DELAY = 1900;
+
 const Main = () => {
 	const ref = useRef();
 	const [landingState] = useContext(LandingContext);
 	const { steps } = landingState;
 	const [style, setStyle] = useTween({ opacity: 0, scale: 0.5, y: -200 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIned) {
+		if (steps === LandingSteps.fadeIn) {
 			setStyle(
 				{ opacity: 1, scale: 1, y: 0 },
 				{
-					delay: 900,
+					delay: DELAY,
 					duration: 500,
 					onComplete: () => {
 						ref.current?.classList.add('halo');
@@ -35,8 +37,8 @@ const Sub = () => {
 	const { steps } = landingState;
 	const [style, setStyle] = useTween({ opacity: 0, scale: 0.8, y: -200 });
 	useEffect(() => {
-		if (steps === LandingSteps.fadeIned) {
-			setStyle({ opacity: 1, scale: 1, y: 0 }, { delay: 1000, duration: 500 });
+		if (steps === LandingSteps.fadeIn) {
+			setStyle({ opacity: 1, scale: 1, y: 0 }, { delay: DELAY, duration: 500 });
 		}
 	}, [steps]);
 	return <div style={style} className='sub breath' />;

@@ -4,7 +4,7 @@ import './index.less';
 
 export const ENTSymbol = memo(({ productName }) => (
 	<div className='ENTSymbols'>
-		{[...new Array(3).keys()].map((e) => (
+		{[...new Array(4).keys()].map((e) => (
 			<div key={`s${e}`} />
 		))}
 		<div className='productName'>{productName}</div>
@@ -73,7 +73,7 @@ export const ENT = memo(({ hashtag, characteristic, state }) => {
 				<div className='name' />
 				<div className='hashtag'>
 					{hashtag.map((hash) => (
-						<span key={hash}>{hash}</span>
+						<span key={hash}>{`#${hash}`}</span>
 					))}
 				</div>
 				<div className='percentage' />
