@@ -1,8 +1,8 @@
+@import url('../../../../settings/config.less');
 .UGC {
 	width: 100%;
-	height: 484.99px;
+	height: 413.44px;
 	text-align: center;
-
 	@apply flex flex-col items-center justify-center space-y-5;
 
 	.input {
@@ -67,5 +67,11 @@
 				transform: scale(0.95);
 			}
 		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.UGC {
+		height: 484.99px;
 	}
 }
