@@ -20,6 +20,8 @@ const Question = memo(() => {
 	useEffect(() => {
 		Click.setEnabled(false);
 		setContext({ type: ACTION.LoadingProcess, state: { enabled: true } });
+		const [app] = [...document.getElementsByClassName('App')];
+		app.style.minHeight = 'auto';
 	}, []);
 
 	return (

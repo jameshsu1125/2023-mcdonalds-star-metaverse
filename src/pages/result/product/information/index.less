@@ -55,22 +55,29 @@
 		background-image: url('./img/photo/7.png');
 	}
 
+	.plus {
+		display: inline-block;
+		margin-right: 5px;
+		margin-left: 5px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+
+		@scale: 0.75;
+		@img: './img/plus.svg';
+	}
+
 	.title {
+		position: relative;
 		margin-top: 138px;
 		color: #000;
 
-		@apply flex w-full items-center justify-start font-mediumTC text-3xl;
+		@apply w-full  font-mediumTC text-3xl;
 
-		&::after {
-			margin-left: 5px;
-			width: image-width(@img) * @scale;
-			height: image-height(@img) * @scale;
-			background-image: url(@img);
-			background-size: 100%;
-			content: '';
-
-			@scale: 0.75;
-			@img: './img/plus.svg';
+		& > span {
+			@apply text-2xl;
 		}
 	}
 

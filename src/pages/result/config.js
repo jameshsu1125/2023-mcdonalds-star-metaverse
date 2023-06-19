@@ -38,7 +38,7 @@ export const ResultNames = {
 		ID: IDs['2ENF'],
 		characteristic: '自帶明星級氣場',
 		productName: '麥脆鷄腿',
-		useWith: ['麥脆鷄腿', '中杯汽水'],
+		useWith: ['麥脆鷄腿(原味/辣味) ', '中杯汽水'],
 		describe:
 			'吃炸雞，一定要吃麥脆鷄！黃金美味3要點👉🏻嚴選優質鷄腿＋三道裹粉五道翻滾＋先烤後炸高溫鎖汁，酥脆juicy口感搭配勁涼雪碧，讓人欲罷不能！快去麥當勞1+1星級點！',
 	},
@@ -87,7 +87,7 @@ export const ResultNames = {
 		image: Friend6,
 		ID: IDs['7IST'],
 		characteristic: '一秒鐘幾十萬上下',
-		productName: '美式咖啡',
+		productName: '經典美式咖啡',
 		useWith: ['金黃地瓜條', '經典美式咖啡'],
 		describe:
 			'最夯的美味在這裡！嚴選台農57號地瓜，原顆鮮切、急凍直炸，成就外脆內鬆軟的神級口感，再配上100%阿拉比卡豆烘焙、新鮮研磨的經典美式咖啡～這樣的明星級美味只要89元！',

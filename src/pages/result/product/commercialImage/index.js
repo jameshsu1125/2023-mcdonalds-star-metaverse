@@ -2,10 +2,10 @@ import { memo, useMemo } from 'react';
 import { ResultNames } from '../../config';
 import './index.less';
 
-const ENF = ({ productName }) => (
+const ENF = () => (
 	<div className='CI_ENF'>
 		<div className='image' />
-		<div className='subtitle'>{productName}</div>
+		<div className='subtitle'>麥脆鷄腿(原味/辣味)</div>
 	</div>
 );
 
