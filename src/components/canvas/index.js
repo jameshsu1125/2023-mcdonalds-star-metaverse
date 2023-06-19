@@ -18,12 +18,12 @@ import INT from './img/INT.png';
 import ISF from './img/ISF.png';
 import IST from './img/IST.png';
 import Star from './img/star.svg';
-import { ResultContext, ResultSteps } from '../../pages/result/config';
+import { ResultContentsList, ResultContext, ResultSteps } from '../../pages/result/config';
 
 const Canvas = memo(() => {
 	const ref = useRef();
 	const [context, setContext] = useContext(Context);
-	const { id, userName } = context[ACTION.result];
+	const { id, userName, mottoIndex } = context[ACTION.result];
 
 	const [, setState] = useContext(ResultContext);
 
@@ -32,6 +32,10 @@ const Canvas = memo(() => {
 
 	useEffect(() => {
 		if (size) {
+			const [content] = ResultContentsList.filter((e) => e.ID === id);
+			const { motto } = content;
+			const currentMotto = motto[mottoIndex];
+
 			const ctx = ref.current.getContext('2d');
 			ctx.drawImage(size.target, 0, 0);
 
@@ -39,6 +43,7 @@ const Canvas = memo(() => {
 				'bold 38px Microsoft JhengHei, 微軟正黑體, PingFang, LiHei Pro, 黑體-繁, sans-serif';
 			ctx.fillStyle = '#fff';
 			const currentName = userName === '' ? '你' : userName;
+
 			ctx.fillText(currentName, 382, 213);
 
 			const split = currentName.split('');
@@ -53,6 +58,11 @@ const Canvas = memo(() => {
 				.reduce((prev, current) => prev + current, 0);
 
 			ctx.drawImage(star, 387 + offset * 19.5, 176);
+
+			ctx.font = '37.5px Heavy';
+			ctx.fillStyle = '#000';
+			ctx.textAlign = 'center';
+			ctx.fillText(currentMotto, 540.5, 1530);
 
 			setContext({ type: ACTION.modal, state: { body: ref.current.toDataURL('image/png', 1) } });
 			setState((S) => ({ ...S, steps: ResultSteps.fadeIn }));

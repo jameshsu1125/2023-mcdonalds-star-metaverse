@@ -1,10 +1,10 @@
 import { memo, useMemo } from 'react';
 import './index.less';
 
-const Motto = memo(({ data }) => {
+const Motto = memo(({ data, index }) => {
 	const text = useMemo(() => {
 		const { motto } = data;
-		return motto[Math.floor(Math.random() * motto.length)];
+		return motto[index];
 	}, [data]);
 
 	return (

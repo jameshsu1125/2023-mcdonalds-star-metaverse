@@ -47,6 +47,7 @@ const idFromQS = dataFromQS.length > 0 ? dataFromQS[0][1] : IDs['1ENT'];
 export const RESULT_STATE = {
 	userName: decodeURIComponent(QueryString.get('name')) || '',
 	id: idFromQS,
+	mottoIndex: Math.floor(Math.random() * 4),
 };
 
 export const MODAL_STATE = {

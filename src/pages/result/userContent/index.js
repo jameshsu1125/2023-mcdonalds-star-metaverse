@@ -11,7 +11,7 @@ import UserName from './userName';
 
 const UserContent = memo(() => {
 	const [context] = useContext(Context);
-	const { id, userName } = context[ACTION.result];
+	const { id, userName, mottoIndex } = context[ACTION.result];
 
 	const [state] = useContext(ResultContext);
 
@@ -32,7 +32,7 @@ const UserContent = memo(() => {
 			</div>
 			<UserName userName={userName} />
 			<Themes data={data} state={state} />
-			<Motto data={data} />
+			<Motto data={data} index={mottoIndex} />
 			<Buddy data={data} />
 			<Buttons data={data} />
 		</div>

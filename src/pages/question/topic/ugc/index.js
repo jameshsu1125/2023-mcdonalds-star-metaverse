@@ -29,7 +29,11 @@ const Button = ({ steps, setState, input }) => {
 							setState((S) => {
 								setContext({
 									type: ACTION.result,
-									state: { userName: currentValue, id: findID(S.answers) },
+									state: {
+										userName: currentValue,
+										id: findID(S.answers),
+										mottoIndex: Math.floor(Math.random() * 4),
+									},
 								});
 								return { ...S, userName: currentValue };
 							});
