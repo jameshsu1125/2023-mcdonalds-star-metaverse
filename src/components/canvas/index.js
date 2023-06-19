@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable no-nested-ternary */
 /* eslint-disable function-paren-newline */
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-confusing-arrow */
@@ -41,8 +43,15 @@ const Canvas = memo(() => {
 
 			const split = currentName.split('');
 			const offset = split
-				.map((s, i) => (userName.charCodeAt(i) >= 0 && userName.charCodeAt(i) <= 128 ? 1 : 2))
+				.map((_, i) =>
+					userName.charCodeAt(i) >= 97 && userName.charCodeAt(i) <= 122
+						? 1
+						: userName.charCodeAt(i) >= 49 && userName.charCodeAt(i) <= 57
+						? 1.1
+						: 2,
+				)
 				.reduce((prev, current) => prev + current, 0);
+
 			ctx.drawImage(star, 387 + offset * 19.5, 176);
 
 			setContext({ type: ACTION.modal, state: { body: ref.current.toDataURL('image/png', 1) } });

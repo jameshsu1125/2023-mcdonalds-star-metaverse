@@ -52,8 +52,8 @@ const IST = () => (
 	<div className='CI_IST'>
 		<div className='image' />
 		<div className='subtitle'>
-			<div>冰經典美式咖啡</div>
-			<div>經典美式咖啡</div>
+			<div>經典美式咖啡(冰)</div>
+			<div>經典美式咖啡(熱)</div>
 		</div>
 	</div>
 );
@@ -62,8 +62,16 @@ const INF = () => (
 	<div className='CI_INF'>
 		<div className='image' />
 		<div className='subtitle'>
-			<div>冰無糖綠茶</div>
-			<div>冰無糖紅茶</div>
+			<div>
+				冰綠茶
+				<br />
+				<span>(無糖)</span>
+			</div>
+			<div>
+				冰紅茶
+				<br />
+				<span>(無糖)</span>
+			</div>
 			<div>
 				冰紅茶
 				<br />

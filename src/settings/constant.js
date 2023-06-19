@@ -45,7 +45,7 @@ const dataFromQS = Object.entries(IDs).filter((item) => item[1] === QueryString.
 const idFromQS = dataFromQS.length > 0 ? dataFromQS[0][1] : IDs['1ENT'];
 
 export const RESULT_STATE = {
-	userName: '',
+	userName: decodeURIComponent(QueryString.get('name')) || '',
 	id: idFromQS,
 };
 

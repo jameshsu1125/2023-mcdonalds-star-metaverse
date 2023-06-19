@@ -152,20 +152,23 @@
 			@apply flex flex-row items-center justify-center font-boldTC text-3xl;
 
 			& > div:nth-child(3) {
-				line-height: 22px;
 				transform: translateY(14px) translateX(4px);
-
-				& > span {
-					@apply text-lg;
-				}
 			}
 
 			& > div:nth-child(1) {
-				transform: translateX(-17px);
+				transform: translateX(-17px) translateY(14px);
+			}
+
+			& > div:nth-child(2) {
+				transform: translateY(14px);
 			}
 
 			& > div {
 				width: 10.8rem;
+				line-height: 22px;
+				& > span {
+					@apply text-lg;
+				}
 			}
 		}
 	}

@@ -4,7 +4,6 @@ import './index.less';
 import { IDs } from '../../../../settings/constant';
 
 const Description = ({ data }) => {
-	console.log(data);
 	const { ID } = data;
 	const title = useMemo(() => {
 		const name = data.useWith[0];
