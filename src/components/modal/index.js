@@ -3,7 +3,7 @@ import Click from 'lesca-click';
 import OnloadProvider from 'lesca-react-onload';
 import QueryString from 'lesca-url-parameters';
 import useTween from 'lesca-use-tween';
-import { memo, useContext, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useContext, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { ResultNames } from '../../pages/result/config';
 import { Context } from '../../settings/config';
 import { ACTION, TRANSITION } from '../../settings/constant';
@@ -16,7 +16,6 @@ const CloseButton = ({ setTran }) => {
 			Click.remove(`#${id}`);
 			setTran(TRANSITION.fadeOut);
 		});
-
 		return () => Click.remove(`#${id}`);
 	}, []);
 
@@ -56,21 +55,17 @@ const CopyButton = () => {
 
 const Content = ({ tran, body, setContext, setTran, resultName }) => {
 	const ref = useRef();
-
 	const [style, setStyle] = useTween({ opacity: 0, y: window.innerHeight });
 	const [width, setWidth] = useState(0);
 
 	useEffect(() => {
-		if (tran === TRANSITION.fadeIn) {
-			setStyle({ opacity: 1, y: 0 }, 600);
-		} else if (tran === TRANSITION.fadeOut) {
+		if (tran === TRANSITION.fadeIn) setStyle({ opacity: 1, y: 0 }, 600);
+		else if (tran === TRANSITION.fadeOut) {
 			setStyle(
 				{ opacity: 0, y: window.innerHeight },
 				{
 					duration: 600,
-					onComplete: () => {
-						setContext({ type: ACTION.modal, state: { enabled: false } });
-					},
+					onComplete: () => setContext({ type: ACTION.modal, state: { enabled: false } }),
 				},
 			);
 		}
@@ -80,6 +75,14 @@ const Content = ({ tran, body, setContext, setTran, resultName }) => {
 		const { clientHeight } = ref.current;
 		const r = clientHeight / 1921;
 		setWidth(1081 * r + 8);
+	}, []);
+
+	const onTouchStart = useCallback(() => {
+		window.dataLayer?.push({
+			event: 'click_btn',
+			eventCategory: 'engagement',
+			eventLabel: `星級咖新測長按儲存_${resultName}`,
+		});
 	}, []);
 
 	return (
@@ -94,20 +97,7 @@ const Content = ({ tran, body, setContext, setTran, resultName }) => {
 			<div ref={ref} className='containers'>
 				<div className='module-border-wrap' style={{ width: `${width}px` }}>
 					<div className='module'>
-						{body !== '' && (
-							<img
-								onClick={() => {
-									window.dataLayer?.push({
-										event: 'click_btn',
-										eventCategory: 'engagement',
-										eventLabel: `星級咖新測長按儲存_${resultName}`,
-									});
-								}}
-								role='none'
-								src={body}
-								alt=''
-							/>
-						)}
+						{body !== '' && <img onTouchStart={onTouchStart} role='none' src={body} alt='' />}
 					</div>
 				</div>
 			</div>

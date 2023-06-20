@@ -60,7 +60,7 @@ export const QuestionList = [
 	{
 		question: ['領到餐點後，你在回程時', '發現前方路口發生車禍、導致交通癱瘓'],
 		answers: [
-			{ type: 'S', text: '打開手機地圖看替代路線', gtm: 'S2' },
+			{ type: 'S', text: '打開手機地圖看替代路線', gtm: 'S3' },
 			{ type: 'N', text: '依靠方向感、先繞道再說', gtm: 'N3' },
 		],
 		emoji: 'q7',
