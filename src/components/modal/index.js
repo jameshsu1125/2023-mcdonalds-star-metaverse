@@ -5,7 +5,7 @@ import QueryString from 'lesca-url-parameters';
 import useTween from 'lesca-use-tween';
 import { memo, useCallback, useContext, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { ResultNames } from '../../pages/result/config';
-import { Context } from '../../settings/config';
+import { Context, 麥當勞IG } from '../../settings/config';
 import { ACTION, TRANSITION } from '../../settings/constant';
 import './index.less';
 
@@ -53,7 +53,20 @@ const CopyButton = () => {
 	return <div id={id} />;
 };
 
-const Content = ({ tran, body, setContext, setTran, resultName }) => {
+const LinkToIGButton = () => {
+	const id = useId();
+
+	useEffect(() => {
+		Click.add(`#${id}`, () => {
+			window.open(麥當勞IG);
+		});
+		return () => Click.remove(`#${id}`);
+	}, []);
+
+	return <div id={id} />;
+};
+
+const Content = ({ tran, body, setContext, setTran, result }) => {
 	const ref = useRef();
 	const [style, setStyle] = useTween({ opacity: 0, y: window.innerHeight });
 	const [width, setWidth] = useState(0);
@@ -79,9 +92,9 @@ const Content = ({ tran, body, setContext, setTran, resultName }) => {
 
 	const onTouchStart = useCallback(() => {
 		window.dataLayer?.push({
-			event: 'click_btn',
+			event: 'save_test_result',
 			eventCategory: 'engagement',
-			eventLabel: `星級咖新測長按儲存_${resultName}`,
+			eventLabel: `星級咖心測長按儲存_${result.name}x${result.productName}`,
 		});
 	}, []);
 
@@ -108,7 +121,7 @@ const Content = ({ tran, body, setContext, setTran, resultName }) => {
 					<div />
 					<CopyButton />
 					<div />
-					<div />
+					<LinkToIGButton />
 				</div>
 			</div>
 			<CloseButton setTran={setTran} />
@@ -135,18 +148,19 @@ const Modal = memo(() => {
 
 	const { id } = context[ACTION.result];
 
-	const resultName = useMemo(() => {
+	const result = useMemo(() => {
 		const [currentResult] = Object.values(ResultNames).filter((item) => item.ID === id);
-		return currentResult.name;
+		const { name, productName } = currentResult;
+		return { name, productName };
 	}, [id]);
 
 	useEffect(() => {
 		window.dataLayer?.push({
-			event: 'click_btn',
+			event: 'pop_up',
 			eventCategory: 'engagement',
-			eventLabel: '星級咖新測結果-IG Story分享步驟',
+			eventLabel: `${result.name}x${result.productName}-IG Story分享步驟`,
 		});
-	}, []);
+	}, [result]);
 
 	return (
 		<OnloadProvider
@@ -162,7 +176,7 @@ const Modal = memo(() => {
 						body={body}
 						setContext={setContext}
 						setTran={setTran}
-						resultName={resultName}
+						result={result}
 					/>
 				</div>
 			</div>

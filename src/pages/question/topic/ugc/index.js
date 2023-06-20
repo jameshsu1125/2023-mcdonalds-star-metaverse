@@ -90,7 +90,7 @@ const Input = forwardRef(({ steps }, ref) => {
 
 	return (
 		<div style={style} className='input'>
-			<input ref={inputRef} placeholder='請輸入1-8個字暱稱' type='text' maxLength={16} />
+			<input ref={inputRef} placeholder='請輸入1-8個字暱稱' type='text' maxLength={8} />
 		</div>
 	);
 });

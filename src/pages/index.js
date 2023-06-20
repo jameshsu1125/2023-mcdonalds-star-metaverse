@@ -1,5 +1,6 @@
 import Click from 'lesca-click';
 import Landscape from 'lesca-react-landscape';
+import QueryString from 'lesca-url-parameters';
 import { lazy, memo, Suspense, useContext, useMemo, useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
 import LoadingProcess from '../components/loadingProcess';
@@ -9,6 +10,20 @@ import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
 
 Click.install();
+
+let dataLayerIndex = 0;
+
+if (QueryString.get('debug') === 'true') {
+	setInterval(() => {
+		const { dataLayer } = window;
+		if (dataLayerIndex === dataLayer.length) return;
+		dataLayerIndex = dataLayer.length;
+
+		const lastPush = dataLayer[dataLayer.length - 1];
+		delete lastPush['gtm.uniqueEventId'];
+		console.table(lastPush);
+	}, 30);
+}
 
 const Pages = memo(() => {
 	const [context] = useContext(Context);

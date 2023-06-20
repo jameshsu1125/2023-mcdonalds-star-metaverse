@@ -38,7 +38,7 @@ const ColorFillBar = () => {
 
 	useEffect(() => {
 		setStyle(
-			{ width: `${(index / QuestionList.length) * 100}%` },
+			{ width: `${(index / QuestionList.length) * 100 + 1}%` },
 			{ duration: 600, easing: Bezier.easeInOutBack },
 		);
 	}, [index]);

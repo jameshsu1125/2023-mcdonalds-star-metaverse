@@ -36,4 +36,5 @@ export const reducer = (state, action) => {
 
 export const 網站使用條款URL = 'https://www.mcdonalds.com/tw/zh-tw/terms-and-conditions.html';
 export const 隱私權保護聲明URL = 'https://www.mcdonalds.com/tw/zh-tw/privacy-policy.html';
-export const 麥當勞官網URL = 'https://www.mcdonalds.com/tw/zh-tw/full-menu/1plus1-star-choice.html';
+export const 麥當勞官網URL = 'https://www.mcdonalds.com/tw/zh-tw/whats-hot/2023BADeluxe.html';
+export const 麥當勞IG = 'https://www.instagram.com/';

@@ -1,4 +1,4 @@
-import { memo, useContext, useMemo } from 'react';
+import { memo, useContext, useEffect, useMemo } from 'react';
 import { Context } from '../../../settings/config';
 import { ACTION } from '../../../settings/constant';
 import { ResultContentsList, ResultContext } from '../config';
@@ -19,6 +19,15 @@ const UserContent = memo(() => {
 		const [content] = ResultContentsList.filter((e) => e.ID === id);
 		return content;
 	}, [id]);
+
+	useEffect(() => {
+		const { name, productName } = data;
+		window.dataLayer?.push({
+			event: 'pageview',
+			eventCategory: 'engagement',
+			eventLabel: `${name}x${productName}`,
+		});
+	}, [data]);
 
 	return (
 		<div className='UserContent'>

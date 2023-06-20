@@ -43,6 +43,30 @@
 			@img: './img/spotlight-star.png';
 		}
 
+		@keyframes colorBreath {
+			0% {
+				@apply text-primary;
+			}
+			50% {
+				@apply text-quaternary;
+			}
+			100% {
+				@apply text-primary;
+			}
+		}
+
+		@keyframes fillBreath {
+			0% {
+				fill: #d9447e;
+			}
+			50% {
+				fill: #7d6dc5;
+			}
+			100% {
+				fill: #d9447e;
+			}
+		}
+
 		& > .button {
 			position: absolute;
 			top: 50%;
@@ -56,10 +80,13 @@
 			background-size: 100%;
 			opacity: 0;
 			transform: translateY(-3px);
+			animation: colorBreath 0.3s ease-in-out infinite forwards;
 
 			@img: './img/button.png';
 
 			& > svg {
+				transition: 0.2s;
+				animation: fillBreath 0.3s ease-in-out infinite forwards;
 				pointer-events: none;
 			}
 
@@ -68,13 +95,20 @@
 			&:hover {
 				background-position-y: 100%;
 				color: #fff;
+				animation: none;
 				& > svg {
+					animation: none;
+
 					fill: #fff;
 				}
 			}
 
 			&:active {
 				transform: translateY(0px);
+				animation: none;
+				& > svg {
+					animation: none;
+				}
 			}
 		}
 	}

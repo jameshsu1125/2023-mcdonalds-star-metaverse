@@ -67,12 +67,14 @@ const AgainButton = memo(() => {
 	useEffect(() => {
 		Click.add(`#${id}`, () => {
 			Click.remove(`#${id}`);
-			setContext({ type: ACTION.page, state: PAGE.landing });
 			window.dataLayer?.push({
 				event: 'click_btn',
 				eventCategory: 'engagement',
 				eventLabel: '再測一次',
 			});
+			setTimeout(() => {
+				setContext({ type: ACTION.page, state: PAGE.landing });
+			}, 100);
 		});
 		return () => Click.remove(`#${id}`);
 	}, []);
