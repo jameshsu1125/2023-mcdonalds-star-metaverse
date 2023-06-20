@@ -1,6 +1,6 @@
 import useTween, { Bezier } from 'lesca-use-tween';
 import { memo, useContext, useEffect } from 'react';
-import { QuestionContext, QuestionSteps } from '../../config';
+import { QuestionContext, QuestionList, QuestionSteps } from '../../config';
 import './index.less';
 
 const DELAY = 400;
@@ -19,7 +19,7 @@ const Smile = ({ steps }) => {
 	}, [steps]);
 
 	useEffect(() => {
-		if (index !== 0) {
+		if (index >= 0) {
 			setStyle(
 				{ left: `${index * 10}%`, rotate: 360 * index },
 				{ duration: 600, easing: Bezier.easeInOutBack },
@@ -28,6 +28,22 @@ const Smile = ({ steps }) => {
 	}, [index]);
 
 	return <div style={style} />;
+};
+
+const ColorFillBar = () => {
+	const [state] = useContext(QuestionContext);
+	const { index } = state;
+
+	const [style, setStyle] = useTween({ width: '0%' });
+
+	useEffect(() => {
+		setStyle(
+			{ width: `${(index / QuestionList.length) * 100}%` },
+			{ duration: 600, easing: Bezier.easeInOutBack },
+		);
+	}, [index]);
+
+	return <div className='fill-color-bar' style={style} />;
 };
 
 const Bar = ({ steps, children }) => {
@@ -39,6 +55,9 @@ const Bar = ({ steps, children }) => {
 	}, [steps]);
 	return (
 		<div style={style} className='bar'>
+			<div>
+				<ColorFillBar />
+			</div>
 			<div>{children}</div>
 		</div>
 	);

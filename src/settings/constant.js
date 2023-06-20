@@ -41,12 +41,15 @@ export const IDs = {
 	'8INF': 'INF',
 };
 
-const dataFromQS = Object.entries(IDs).filter((item) => item[1] === QueryString.get('id'));
-const idFromQS = dataFromQS.length > 0 ? dataFromQS[0][1] : IDs['1ENT'];
+const QueryID = Object.entries(IDs).filter((item) => item[1] === QueryString.get('id'));
+const currentID = QueryID.length > 0 ? QueryID[0][1] : IDs['1ENT'];
+
+const QueryName = QueryString.get('name');
+const currentName = QueryName === false ? '' : QueryName;
 
 export const RESULT_STATE = {
-	userName: decodeURIComponent(QueryString.get('name')) || '',
-	id: idFromQS,
+	userName: currentName,
+	id: currentID,
 	mottoIndex: Math.floor(Math.random() * 4),
 };
 
