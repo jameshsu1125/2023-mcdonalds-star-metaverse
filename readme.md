@@ -88,10 +88,20 @@ Thank customers and some manufacturers for their support.
 
 Code and documentation copyright 2011-2022 the authors. Code released under the [MIT License](https://reponame/blob/master/LICENSE).
 
-## remove optimized svg
+## test result page
 
-```sh
-find . -name '*\<*' | while read f; do mv "$f" "${f//\</}"; done
-```
+1. [職場星天王](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=ENT)
 
-<!-- open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security -->
+2. [C 位娛樂星](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=ENF)
+
+3. [人氣星團寵](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=ESF)
+
+4. [星際超模](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=INT)
+
+5. [金牌星業務](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=EST)
+
+6. [話題星天才](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=ISF)
+
+7. [科技星貴](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=IST)
+
+8. [星靈嚮導](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=INF)
