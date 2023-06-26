@@ -27,6 +27,9 @@ const Landing = memo(() => {
 			eventCategory: 'engagement',
 			eventLabel: `${QueryString.file().split('.')[0]}_${document.title}`,
 		});
+
+		const [app] = [...document.getElementsByClassName('App')];
+		app.removeAttribute('style');
 	}, []);
 
 	return (

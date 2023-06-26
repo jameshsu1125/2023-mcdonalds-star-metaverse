@@ -88,7 +88,7 @@ Thank customers and some manufacturers for their support.
 
 Code and documentation copyright 2011-2022 the authors. Code released under the [MIT License](https://reponame/blob/master/LICENSE).
 
-## test result page
+## test result pages
 
 1. [職場星天王](https://jameshsu1125.github.io/2023-mcdonalds-star-metaverse/?id=ENT)
 
