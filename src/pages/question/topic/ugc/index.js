@@ -1,11 +1,11 @@
 import Click from 'lesca-click';
 import useTween, { Bezier } from 'lesca-use-tween';
-import { memo, useContext, useEffect, useId, useRef, forwardRef, useImperativeHandle } from 'react';
-import { QuestionContext, QuestionDirect, QuestionSteps } from '../../config';
-import './index.less';
-import { findID, setMaxLength } from './useSort';
+import { forwardRef, memo, useContext, useEffect, useId, useImperativeHandle, useRef } from 'react';
 import { Context } from '../../../../settings/config';
 import { ACTION, PAGE } from '../../../../settings/constant';
+import { QuestionContext, QuestionDirect, QuestionSteps } from '../../config';
+import './index.less';
+import { findID } from './useSort';
 
 const Button = ({ steps, setState, input }) => {
 	const [, setContext] = useContext(Context);
@@ -24,18 +24,17 @@ const Button = ({ steps, setState, input }) => {
 						Click.add(`#${id}`, () => {
 							Click.remove(`#${id}`);
 							const { target } = input.current;
-							const currentValue = setMaxLength(target.value);
-							target.value = currentValue;
+							const { value: userName } = target;
 							setState((S) => {
 								setContext({
 									type: ACTION.result,
 									state: {
-										userName: currentValue,
+										userName,
 										id: findID(S.answers),
 										mottoIndex: Math.floor(Math.random() * 4),
 									},
 								});
-								return { ...S, userName: currentValue };
+								return { ...S, userName };
 							});
 							setContext({ type: ACTION.page, state: PAGE.result });
 						});
