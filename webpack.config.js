@@ -90,7 +90,7 @@ module.exports = () => {
 			allowedHosts: 'all',
 			port: 8080,
 			host: '0.0.0.0',
-			https: false,
+			https: true,
 		},
 		performance: { hints: false },
 	};

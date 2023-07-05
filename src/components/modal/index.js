@@ -42,9 +42,15 @@ const CopyButton = () => {
 	const id = useId();
 
 	useEffect(() => {
+		const URL = QueryString.root();
 		Click.add(`#${id}`, () => {
-			if (copy(QueryString.root())) {
-				alert('網址已經複製到剪貼簿');
+			if (navigator.clipboard === undefined) {
+				if (copy(URL)) alert('網址已經複製到剪貼簿');
+			} else {
+				navigator.clipboard?.writeText?.(URL).then(
+					() => alert('網址已經複製到剪貼簿'),
+					() => alert('剪貼簿功能不支援，請直接到網址列複製'),
+				);
 			}
 		});
 		return () => Click.remove(`#${id}`);
