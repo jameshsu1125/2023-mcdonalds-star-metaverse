@@ -30,7 +30,7 @@ module.exports = () => {
 					use: [
 						{
 							loader: 'file-loader',
-							options: { name: `${Folder}/image/[path][name].[contenthash].[ext]`, context: 'src' },
+							options: { name: `${Folder}/image/[path][name].[ext]`, context: 'src' },
 						},
 					],
 				},
@@ -68,7 +68,7 @@ module.exports = () => {
 		},
 		output: {
 			path: path.resolve(__dirname, 'dist'),
-			filename: `${Folder}/js/[name].[contenthash].min.js`,
+			filename: `${Folder}/js/[name].min.js`,
 			publicPath: NODE_ENV === 'production' ? './' : '/',
 		},
 		resolve: {
