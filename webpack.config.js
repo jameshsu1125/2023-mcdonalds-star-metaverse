@@ -30,7 +30,17 @@ module.exports = () => {
 					use: [
 						{
 							loader: 'file-loader',
-							options: { name: `${Folder}/image/[path][name].[contenthash].[ext]`, context: 'src' },
+							options: {
+								name: `${Folder}/image/[path][name].[ext]`,
+								// postTransformPublicPath: (p) => {
+								// 	const basicURL = `https://s.arcww.com.tw/campaign.mcdonalds.com.tw/20231plus1quiz/${
+								// 		p.split('"')[1]
+								// 	}`;
+
+								// 	return p;
+								// },
+								context: 'src',
+							},
 						},
 					],
 				},
