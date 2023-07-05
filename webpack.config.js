@@ -68,7 +68,7 @@ module.exports = () => {
 		},
 		output: {
 			path: path.resolve(__dirname, 'dist'),
-			filename: `${Folder}/js/[name].min.js`,
+			filename: `${Folder}/js/[name].js`,
 			publicPath: NODE_ENV === 'production' ? './' : '/',
 		},
 		resolve: {
