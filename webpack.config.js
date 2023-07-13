@@ -30,7 +30,10 @@ module.exports = () => {
 					use: [
 						{
 							loader: 'file-loader',
-							options: { name: `${Folder}/image/[path][name].[ext]`, context: 'src' },
+							options: {
+								name: '[path][name].[ext]',
+								outputPath: `${Folder}/image/`,
+							},
 						},
 					],
 				},
@@ -39,7 +42,10 @@ module.exports = () => {
 					use: [
 						{
 							loader: 'file-loader',
-							options: { name: `${Folder}/video/[path][name].[ext]`, context: 'src' },
+							options: {
+								name: '[path][name].[ext]',
+								outputPath: `${Folder}/video/`,
+							},
 						},
 					],
 				},
@@ -48,7 +54,10 @@ module.exports = () => {
 					use: [
 						{
 							loader: 'file-loader',
-							options: { name: `${Folder}/audio/[path][name].[ext]`, context: 'src' },
+							options: {
+								name: '[path][name].[ext]',
+								outputPath: `${Folder}/audio/`,
+							},
 						},
 					],
 				},
